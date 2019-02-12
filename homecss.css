@@ -1,0 +1,1 @@
+.backline polyline,.frontline polyline{stroke-width:6}.backline polyline{stroke:#f1f1f2;z-index:-5}.frontline polyline{stroke:#0061af;z-index:-1}.linebox{position:absolute}#linebox2 .backline polyline{stroke:#d1d3d4;z-index:9}.linebox1{height:100%}.linebox2{height:500px}.line{position:absolute;top:0;left:0}#trigger2 div,#trigger3 div{border:none}
