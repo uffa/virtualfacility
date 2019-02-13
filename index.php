@@ -450,7 +450,9 @@
 
        <script src="sm/ScrollMagic.js"></script>
        <script src="sm/debug.addIndicators.js"></script>
+       <script src="homescroll-functions.js"></script>
        <script src="homescroll.js"></script>
+
        <link href="homecss.css" rel="stylesheet" type="text/css"/>
    </body>
 </html>
