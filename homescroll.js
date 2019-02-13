@@ -1,6 +1,6 @@
 
-  var lineboxes = [];
-  var animcontroller,resettimer;
+var lineboxes = [];
+var animcontroller,resettimer;
 
 $( document ).ready(function() {
   // REPLACE WITH HTML
