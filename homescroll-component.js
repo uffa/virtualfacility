@@ -10,9 +10,8 @@ VF = window.VF || {};
       var _this = this;
       _this.presetup();
       _this.createlines();
-      _this.duplines();
-      _this.animatelines();
 
+      _this.animatelines();
       _this.pageevents();
     },
     presetup: function() {
@@ -81,6 +80,9 @@ VF = window.VF || {};
       draw = SVG(linebox).size("100%","100%");
       polyline = draw.polyline(construct).fill('none');
       $(polyline.node).parent().addClass("line vline backline");
+
+      _this.fixtopline();
+      _this.duplines();
     },
     duplines: function() {
       var _this = this;
@@ -94,6 +96,20 @@ VF = window.VF || {};
           $clone.css("stroke-dashoffset", linelength);
           $clone.attr("id","activeline"+index);
       });
+    },
+    fixtopline: function() {
+      var _this = this;
+
+      $("#linebox1").css("left",0);
+      var l1left = $("#linebox1").offset().left;
+      var l2left = $("#linebox2").offset().left;
+
+      console.log(l1left);
+      console.log(l2left);
+      var adj = l2left-l1left-5;
+      $("#linebox1").css("left",adj);
+      $("#linebox1").siblings("img").css("left",adj);
+
 
     },
     animatelines: function() {
@@ -133,14 +149,10 @@ VF = window.VF || {};
           var perc = Math.floor(e.progress * 100);
           var $aline = $(".line.active");
           var linelength = parseInt($aline.css("stroke-dasharray"), 10);
-
-
           var offlength = linelength - Math.floor(e.progress * linelength);
-          console.log(offlength);
-
           $aline.css("stroke-dashoffset", offlength);
 
-          console.log("progress: "+ perc + "%");
+          //console.log("progress: "+ perc + "%");
         }
     },
     pageevents: function() {
@@ -167,7 +179,6 @@ VF = window.VF || {};
       _this.animcontroller.destroy(true);
 
       _this.createlines();
-      _this.duplines();
       _this.animatelines();
     },
     addlinebox: function(lb,tr) {
