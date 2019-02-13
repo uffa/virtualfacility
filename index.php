@@ -448,8 +448,12 @@
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
 
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/jquery.ScrollMagic.js"></script> -->
+
        <script src="sm/ScrollMagic.js"></script>
        <script src="sm/debug.addIndicators.js"></script>
+       <script src="sm/jquery.ScrollMagic.js"></script>
 
        <script src="homescroll-component.js"></script>
 

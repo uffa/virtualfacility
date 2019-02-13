@@ -25,3 +25,23 @@
   & div  { border:none; }
 
 }
+.appear {
+  transition: all 0.5s ease-out;
+}
+.waiting {
+  position: relative;
+  opacity: 0;
+  top:20px;
+  &.blue {
+    opacity: 1;
+    top:0px;
+    color:#d1d3d4;
+  }
+}
+.displayed {
+  opacity: 1;
+  top:0px;
+  &.blue {
+    color:#0061af;
+  }
+}

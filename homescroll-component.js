@@ -5,14 +5,22 @@ VF = window.VF || {};
     animcontroller:null,
     resettimer:null,
     lineboxes:[],
+    hookpos: 0.55,
+    addindicators: true,
 
     init: function () {
       var _this = this;
       _this.presetup();
-      _this.createlines();
+      _this.buildanimation();
+      _this.browserevents();
 
+    },
+    buildanimation: function() {
+      var _this = this;
+      _this.animcontroller = new ScrollMagic.Controller({loglevel: 0});
+      _this.createlines();
       _this.animatelines();
-      _this.pageevents();
+      _this.animatetext();
     },
     presetup: function() {
       var _this = this;
@@ -104,21 +112,58 @@ VF = window.VF || {};
       var l1left = $("#linebox1").offset().left;
       var l2left = $("#linebox2").offset().left;
 
-      console.log(l1left);
-      console.log(l2left);
       var adj = l2left-l1left-5;
       $("#linebox1").css("left",adj);
       $("#linebox1").siblings("img").css("left",adj);
 
-
     },
+    animatetext: function() {
+      var _this = this;
+
+      var textselectors = [];
+      var triggeroffset = [];
+      textselectors.push(".home_sec1_p1 h5");
+      triggeroffset.push(.2);
+      textselectors.push(".div-block-29 h1");
+      triggeroffset.push(0.20);
+      textselectors.push(".div-block-2 h3");
+      triggeroffset.push(0);
+      textselectors.push(".div-block-30 h1");
+      triggeroffset.push(0.15);
+      textselectors.push(".div-block-4 h5");
+      triggeroffset.push(0);
+
+      textselectors.push(".div-block-6");
+      triggeroffset.push(0);
+
+      textselectors.push(".home_productblockwrapper");
+      triggeroffset.push(0.1);
+
+      textselectors.push(".div-block-6-copy");
+      triggeroffset.push(0.3);
+
+
+      $.each(textselectors,function(i,textselector) {
+        $(textselector).addClass("appear waiting");
+        var scene = new ScrollMagic.Scene({triggerElement:textselector, duration:0})
+                    .triggerHook(_this.hookpos + triggeroffset[i])
+                    .addTo(_this.animcontroller)
+                    .setClassToggle(textselector,'displayed');
+        if (_this.addindicators) {
+          scene.addIndicators({
+            name: textselector,
+            indent: 0});
+        }
+      });
+
+      },
     animatelines: function() {
        var _this = this;
       // init controller
-        _this.animcontroller = new ScrollMagic.Controller({loglevel: 0});
         var scenes = [];
         var triggers = [];
         var durations = [];
+        var totalscenes = 3;
 
 
         triggers.push("#trigger1");
@@ -133,13 +178,18 @@ VF = window.VF || {};
         // build scene
 
 
-        for (var snum = 0; snum < 3; snum++) {
+        for (var snum = 0; snum < totalscenes; snum++) {
           var scene = new ScrollMagic.Scene({triggerElement: triggers[snum], duration: durations[snum]})
-                  .addIndicators()
-                  .triggerHook(0.55)
+                  .triggerHook(_this.hookpos)
                   .addTo(_this.animcontroller)
                   .setClassToggle("#activeline"+snum, 'active')
                   .on("progress", callback);
+          if (_this.addindicators) {
+            scene.addIndicators({
+              name: triggers[snum],
+              indent: 0
+            });
+          }
           scenes.push(scene);
         }
 
@@ -155,7 +205,7 @@ VF = window.VF || {};
           //console.log("progress: "+ perc + "%");
         }
     },
-    pageevents: function() {
+    browserevents: function() {
       var _this = this;
       $( window ).resize(function() {
         _this.resetanimation();
@@ -177,9 +227,7 @@ VF = window.VF || {};
         box.remove();
       });
       _this.animcontroller.destroy(true);
-
-      _this.createlines();
-      _this.animatelines();
+      _this.buildanimation();
     },
     addlinebox: function(lb,tr) {
       var _this = this;
