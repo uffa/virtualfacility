@@ -8,6 +8,7 @@ VF = window.VF || {};
     lineboxes:[],
     hookpos: 0.55,
     addindicators: window.debug || false,
+    currentLinebox:null,
 
 
     init: function () {
@@ -21,38 +22,24 @@ VF = window.VF || {};
         _this.buildanimation();
         _this.browserevents();
       },10);
-
-
     },
     buildanimation: function() {
       var _this = this;
       _this.animcontroller = new ScrollMagic.Controller({loglevel: 0});
       _this.createlines();
+      _this.adjustlines();
+      _this.duplines();
       _this.animatelines();
       _this.animatetext();
     },
     presetup: function() {
       var _this = this;
-      // REPLACE WITH HTML ATTRIBUTES AND CLASSES
-
-      $(".div-block-28").addClass("linestart1");
-      $(".section-7").addClass("linestart2 lineend1");
-      $(".section-8").addClass("linestart3 lineend2");
-      $("footer").addClass("lineend3").attr("durationoffset","400").attr("endoffset","150");
-
-      if ($(".scrollin").length == 0) {
-        $(".home_sec1_p1 h5,.div-block-29 h1").addClass("scrollin offset20");
-        $(".div-block-2 h3,.div-block-4 h5,.div-block-6").addClass("scrollin offset0");
-        $(".div-block-30 h1").addClass("scrollin offset15");
-        $(".home_productblockwrapper").addClass("scrollin offset10");
-        $(".div-block-6-copy").addClass("scrollin offset30");
-      }
-
-      $(".home_productblockwrapper").wrap("<div class='boxwrap'></div>");
-
+      VF.animPage.presetup();
     },
-    constructline: function($lb, coords) {
+    constructline: function(coords) {
       var _this = this;
+      console.log(coords);
+      $lb = _this.currentLinebox;
       var construct =_this.buildcoords(coords);
       var draw = SVG($lb.attr("id")).size("100%","100%");
       var polyline = draw.polyline(construct).fill('none');
@@ -60,44 +47,15 @@ VF = window.VF || {};
     },
     createlines: function() {
       var _this = this;
-      var linebox,boxheight,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,y1,y2,y3,y4,y5,y6,y7,y8,y9,y10;
-      var construct, draw, polyline;
-
-      ////////////////////////////////////////////////
-      $lb = _this.addlinebox();
-      x1 = x2 = 12;
-      y1 = 85; // below image
-      y2 = $lb.height();
-      _this.constructline($lb, [x1,y1,x2,y2]);
-
-      ////////////////////////////////////////////////
-      $lb = _this.addlinebox();
-      x1 = x2 = 7;
-      y1 = 0;
-      y2 = y3 =  $(".div-block-29").offset().top - $lb.offset().top +  $(".div-block-29").height()/2 + 8;
-      x3 = x4 = x7 = x8 =  $lb.width() - 10;
-      y4 = y5 = $(".div-block-3").offset().top - $lb.offset().top + 10;
-      x5 = x6 = x2 + 45;
-      y6 = y7 = y5 + $(".div-block-3").height() + 30;
-      y8 = y9 = y7 + $(".div-block-4").height() + 80;
-      x9 = x10 = $lb.attr("boxcenter");
-      y10 = $lb.height();
-      _this.constructline($lb,[x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10]);
-
-      ////////////////////////////////////////////////
-      $lb = _this.addlinebox();
-      x1 = x2 =  $lb.attr("boxcenter");
-      y1 = 0;
-      y2 = y3 = $(".div-block-27").offset().top - $lb.offset().top + 10;
-      x3 = x4=  parseInt($lb.attr("boxcenter")) + $(".div-block-6").width()/2+18;
-      y4 = y5 = y3 + $(".div-block-27").height();
-      x5 = x6 = $lb.attr("boxcenter");
-      y6 = $lb.height();
-      _this.constructline($lb,[x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6]);
-
-
-      _this.fixtopline();
-      _this.duplines();
+      if (VF.animPage.createlines) {
+        VF.animPage.createlines();
+      }
+    },
+    adjustlines: function() {
+      var _this = this;
+      if (VF.animPage.adjustlines) {
+        VF.animPage.adjustlines();
+      }
     },
     duplines: function() {
       var _this = this;
@@ -112,18 +70,7 @@ VF = window.VF || {};
           $clone.attr("id","activeline"+index);
       });
     },
-    fixtopline: function() {
-      var _this = this;
 
-      $("#linebox1").css("left",0);
-      var l1left = $("#linebox1").offset().left;
-      var l2left = $("#linebox2").offset().left;
-
-      var adj = l2left-l1left-5;
-      $("#linebox1").css("left",adj);
-      $("#linebox1").siblings("img").css("left",adj);
-
-    },
     animatetext: function() {
       var _this = this;
 
@@ -170,9 +117,14 @@ VF = window.VF || {};
 
         // build scene
         for (var snum = 0; snum < _this.lineboxes.length; snum++) {
-          var trigger = ".linestart"+(snum+1);
-          var duration = $(".lineend"+(snum+1)).offset().top-  $(".linestart"+(snum+1)).offset().top;
-          var durationoffset = parseInt($(".lineend"+(snum+1)).attr("durationoffset"));
+          var trigger = ".linetrigger"+(snum+1);
+          var linestart = ".linestart"+(snum+1);
+          var lineend = ".lineend"+(snum+1);
+          if ($(trigger).length == 0) {
+            $(linestart).addClass("linetrigger"+(snum+1));
+          }
+          var duration = $(lineend).offset().top-  $(trigger).offset().top;
+          var durationoffset = parseInt($(lineend).attr("durationoffset"));
           if (!isNaN(durationoffset)) {
             duration = duration - durationoffset;
           }
@@ -198,7 +150,7 @@ VF = window.VF || {};
           var linelength = parseInt($aline.css("stroke-dasharray"), 10);
           var offlength = linelength - Math.floor(e.progress * linelength);
           $aline.css("stroke-dashoffset", offlength);
-
+          $aline.data("percent",perc);
           //console.log("progress: "+ perc + "%");
         }
     },
@@ -250,6 +202,11 @@ VF = window.VF || {};
       if ($targetdiv.length == 0) {
         $targetdiv = $(startclass);
       }
+      if ($targetdiv.length > 1) {
+        console.log("multiple divs found for linebox: " + num);
+        console.log($targetdiv);
+        $targetdiv = $targetdiv.first();
+      }
 
       $div = $targetdiv.prepend("<div id='"+ lineboxname +"' class='linebox'/>").css("position", "relative");
       $linebox = $("#"+lineboxname);
@@ -263,25 +220,65 @@ VF = window.VF || {};
       $linebox.height(boxheight);
       $linebox.width($targetdiv.width());
 
-      $linebox.attr("boxheight",$linebox.height());
-      $linebox.attr("boxcenter",$linebox.width()/2+1);
 
       _this.lineboxes.push($linebox);
+      _this.currentLinebox = $linebox;
       return $linebox;
     },
 
     buildcoords: function(coords) {
-        var r = "";
-        $.each(coords, function(i,p) {
-          r += p;
-          if (i%2 == 1) {
-            r += " ";
-          }
-          else {
-           r += ",";
-          }
-        });
-        return r;
+      var _this = this;
+      var r = "";
+      var lastparam = "x";
+      $.each(coords, function(i,p) {
+        if (isNaN(p)) {
+          console.log("invalid line coordinates: " + r + "[NaN for " + lastparam + Math.ceil(i/2) + "]");
+          var lastIndex = r.lastIndexOf(" ");
+          r = r.substring(0, lastIndex);
+          return false; // exit loop
+        }
+        r += p;
+        if (i%2 == 1) {
+          lastparam = "x";
+          r += " ";
+        }
+        else {
+         lastparam = "y";
+         r += ",";
+        }
+      });
+      return r;
+    },
+    heightOf:function(selector) {
+      return parseInt($(selector).height())+parseInt($(selector).css("paddingBottom"))+parseInt($(selector).css("paddingTop"));
+    },
+    widthOf:function(selector) {
+      return parseInt($(selector).width())+parseInt($(selector).css("paddingRight"))+parseInt($(selector).css("paddingLeft"));
+    },
+    leftOf:function(selector) {
+      //return this.boxCenter() - this.widthOf(selector)/2;
+      return $(selector).offset().left - this.currentLinebox.offset().left;
+    },
+    rightOf:function(selector) {
+      return this.boxCenter() + this.widthOf(selector)/2;
+    },
+    topOf:function(selector) {
+      return $(selector).offset().top - this.currentLinebox.offset().top;
+    },
+    middleOf:function(selector) {
+      return $(selector).offset().top - this.currentLinebox.offset().top + this.heightOf(selector)/2;
+    },
+    bottomOf:function(selector) {
+      return $(selector).offset().top - this.currentLinebox.offset().top + this.heightOf(selector);
+    },
+    boxCenter:function() {
+      return this.currentLinebox.width()/2+1;
+    },
+    boxHeight:function() {
+      return this.currentLinebox.height();
+    },
+    boxWidth:function() {
+      return this.currentLinebox.width()-3;
     },
     getPolylineLength: function(polylineElement){
       function dis(p,q){
@@ -303,5 +300,51 @@ VF = window.VF || {};
         return r;
     }
   };
+
+  // ADD FUNCTIONS TO PAGE
+  if (VF.animPage) {
+
+    VF.animPage.addlinebox = function() {
+        return VF.animModule.addlinebox();
+    };
+    VF.animPage.constructline = function(a) {
+        return VF.animModule.constructline(a);
+    };
+    VF.animPage.leftOf = function(a) {
+        return VF.animModule.leftOf(a);
+    };
+    VF.animPage.rightOf = function(a) {
+        return VF.animModule.rightOf(a);
+    };
+    VF.animPage.topOf = function(a) {
+        return VF.animModule.topOf(a);
+    };
+    VF.animPage.middleOf = function(a) {
+        return VF.animModule.middleOf(a);
+    };
+    VF.animPage.bottomOf = function(a) {
+        return VF.animModule.bottomOf(a);
+    };
+    VF.animPage.heightOf = function(a) {
+        return VF.animModule.heightOf(a);
+    };
+    VF.animPage.widthOf = function(a) {
+        return VF.animModule.widthOf(a);
+    };
+    VF.animPage.boxHeight = function() {
+        return VF.animModule.boxHeight();
+    };
+    VF.animPage.boxCenter = function() {
+        return VF.animModule.boxCenter();
+    };
+    VF.animPage.boxWidth = function() {
+        return VF.animModule.boxWidth();
+    };
+    VF.animPage.duplines = function() {
+       return VF.animModule.duplines();
+    };
+  }
+
+
   VF.animModule.init();
 })(jQuery);
