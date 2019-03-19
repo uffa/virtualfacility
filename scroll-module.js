@@ -276,7 +276,7 @@ VF = window.VF || {};
       var lastparam = "x";
       $.each(coords, function(i,p) {
         if (isNaN(p) || p == null) {
-          console.log("invalid line coordinates: " + r + "[NaN for " + lastparam + (Math.ceil(i/2) + 1) + "]");
+          console.log("End of coordinates: " + r + "[NaN/Null for " + lastparam + (Math.ceil(i/2) + 1) + "]");
           var lastIndex = r.lastIndexOf(" ");
           r = r.substring(0, lastIndex);
           return false; // exit loop
@@ -306,12 +306,27 @@ VF = window.VF || {};
     widthOf:function(selector) {
       return parseInt($(selector).width())+parseInt($(selector).css("paddingRight"))+parseInt($(selector).css("paddingLeft"));
     },
-    leftOf:function(selector) {
-      //return this.boxCenter() - this.widthOf(selector)/2;
-      return $(selector).offset().left - this.currentLinebox.offset().left;
+    leftOf:function(selector,adjustment) {
+      if (!this.checkSelector(selector)) { return 0; }
+      val = $(selector).offset().left - this.currentLinebox.offset().left;
+      if (adjustment && !isNaN(adjustment)) {
+        val = val + adjustment;
+        if (val < this.boxLeft()) {
+          return this.boxLeft();
+        }
+      }
+      return val;
     },
-    rightOf:function(selector) {
-      return this.boxCenter() + this.widthOf(selector)/2;
+    rightOf:function(selector,adjustment) {
+      if (!this.checkSelector(selector)) { return 0; }
+      val = this.boxCenter() + this.widthOf(selector)/2;
+      if (adjustment && !isNaN(adjustment)) {
+        val = val + adjustment;
+        if (val > this.boxWidth()) {
+          return this.boxWidth();
+        }
+      }
+      return val;
     },
     topOf:function(selector) {
       return $(selector).offset().top - this.currentLinebox.offset().top;
@@ -356,11 +371,11 @@ VF = window.VF || {};
     VF.animPage.constructline = function(a) {
         return VF.animModule.constructline(a);
     };
-    VF.animPage.leftOf = function(a) {
-        return VF.animModule.leftOf(a);
+    VF.animPage.leftOf = function(a,b) {
+        return VF.animModule.leftOf(a,b);
     };
-    VF.animPage.rightOf = function(a) {
-        return VF.animModule.rightOf(a);
+    VF.animPage.rightOf = function(a,b) {
+        return VF.animModule.rightOf(a,b);
     };
     VF.animPage.topOf = function(a) {
         return VF.animModule.topOf(a);

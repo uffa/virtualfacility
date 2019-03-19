@@ -42,7 +42,8 @@ VF = window.VF || {};
       y2 = y3 = _this.middleOf(".home_belowhero_line2 h1");
       x3 = x4 = _this.boxLeft();
       y4 = _this.boxHeight();
-      _this.constructline([x1,y1,x2,y2,x3,y3,x4,y4]);
+       _this.constructline([x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10]);
+      x1=y1=x2=y2=x3=y3=x4=y4=x5=y5=x6=y6=x7=y7=x8=y8=x9=y9=x10=y10=null; // reset vars
 
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
@@ -58,6 +59,7 @@ VF = window.VF || {};
       x9 = x10 = _this.boxCenter(); //$lb.attr("boxcenter");
       y10 = _this.boxHeight();  //$lb.height();
       _this.constructline([x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10]);
+      x1=y1=x2=y2=x3=y3=x4=y4=x5=y5=x6=y6=x7=y7=x8=y8=x9=y9=x10=y10=null; // reset vars
 
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
@@ -68,7 +70,8 @@ VF = window.VF || {};
       y4 = y5 = _this.bottomOf(".home_sec2_copy1wrap");
       x5 = x6 = _this.boxCenter();
       y6 = _this.boxHeight();
-      _this.constructline([x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6]);
+      _this.constructline([x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10]);
+      x1=y1=x2=y2=x3=y3=x4=y4=x5=y5=x6=y6=x7=y7=x8=y8=x9=y9=x10=y10=null; // reset vars
     },
     adjustlines: function() {
       var _this = this;
