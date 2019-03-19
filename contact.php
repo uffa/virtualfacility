@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 <!-- Last Published: Tue Mar 19 2019 16:34:27 GMT+0000 (UTC) -->
-<html data-wf-domain="www.virtualfacility.ai" data-wf-page="5c0de5e936137d7deedda63b" data-wf-site="5c0de5e936137dd992dda63a">
+<html data-wf-domain="www.virtualfacility.ai" data-wf-page="5c1b30f41c28c14776768482" data-wf-site="5c0de5e936137dd992dda63a">
   <head>
     <meta charset="utf-8" />
-    <title>Virtual Facility: Building Intelligence Software</title>
-    <meta content="Virtual Facility is a provider of a machine-learning powered building intelligence software solution to better understand, control, predict and reduce the operational expenditures of large institutional facilities." name="description" />
+    <title>Contact Us</title>
+    <meta content="Contact Us" property="og:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/css/virtual-facility.4d7516865.css" rel="stylesheet" type="text/css" />
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
@@ -102,21 +102,14 @@
 
 
 
-    <style>
-      .hero_qa_top,
-      .hero_qa_bottom,
-      {
-        backface-visibility: hidden;
-      }
-    </style>
   </head>
   <body>
-    <div class="home_hero">
+    <div class="fullpageflexwrap">
       <header class="navsection">
         <div class="nav_container w-container">
           <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
-            <div class="w-container"><a href="/" class="brand w-nav-brand w--current"><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c113f9827f39a75f3af0807_virtual-facility-logo.svg" width="300" alt=""/></a>
-              <nav role="navigation" class="nav-menu w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">Home</a>
+            <div class="w-container"><a href="/" class="brand w-nav-brand"><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c113f9827f39a75f3af0807_virtual-facility-logo.svg" width="300" alt=""/></a>
+              <nav role="navigation" class="nav-menu w-nav-menu"><a href="/" class="nav-link w-nav-link">Home</a>
                 <div data-hover="1" data-delay="0" class="dropdown w-dropdown">
                   <div class="dropdown-toggle w-hidden-medium w-hidden-small w-hidden-tiny w-dropdown-toggle">
                     <a href="/solutions" class="navbarlinkdropdown w-inline-block">
@@ -136,7 +129,7 @@
                   <nav class="dropdown-list w-dropdown-list"><a href="/company/about" class="navdropdownlink w-dropdown-link">ABOUT</a><a href="/company/team" class="navdropdownlink w-dropdown-link">TEAM</a>
                     <div class="dropdownnav_bottomlin"></div>
                   </nav>
-                </div><a href="/solutions" class="nav-link mobileonly w-nav-link">SOLUTIONS</a><a href="/company/about" class="nav-link mobileonly w-nav-link">About</a><a href="/company/team" class="nav-link mobileonly w-nav-link">Team</a><a href="/contact" class="nav-link w-nav-link">Contact</a>
+                </div><a href="/solutions" class="nav-link mobileonly w-nav-link">SOLUTIONS</a><a href="/company/about" class="nav-link mobileonly w-nav-link">About</a><a href="/company/team" class="nav-link mobileonly w-nav-link">Team</a><a href="/contact" class="nav-link w-nav-link w--current">Contact</a>
                 <div class="nav_demoanimatedbutton w-embed">
                   <!doctype html>
                   <html lang="en">
@@ -247,7 +240,7 @@
                   </body>
                   </html>
                 </div><a href="/solutions" class="nav-link requestbutton w-nav-link">Request a Demo</a>
-                <a href="/contact" class="mobilenavdemobutton w-inline-block">
+                <a href="/contact" class="mobilenavdemobutton w-inline-block w--current">
                   <div class="mobilenav_demobtntext">Request A Demo</div>
                 </a>
               </nav>
@@ -258,148 +251,68 @@
           </div>
         </div>
       </header>
-      <div class="home_secherovideonew" data-ix="show-hidestickynav">
-        <div class="w-container">
-          <div class="w-embed"><video autoplay loop muted width="100%">
-    <source src="https://storage.googleapis.com/virtualfacility/html5video/vf-homevideo.mp4" type="video/mp4">
-    <source src="https://storage.googleapis.com/virtualfacility/html5video/vf-homevideo.ogv" type="video/ogg">
-    <source src="https://storage.googleapis.com/virtualfacility/html5video/vf-homevideo.webm" type="video/webm">
-</video></div>
+      <div class="contact_sec1" data-ix="show-hidestickynav">
+        <div class="contact_contain1 w-container">
+          <div class="contact_sec1_heading1flexwrap_left">
+            <div class="team_sec1_introline"></div>
+          </div>
+          <div class="contact_sec1_heading1flexwrap_right">
+            <h1 class="blue">Request a demo.</h1>
+            <h5>We will get back to you within the hour to coordinate a convenient time to setup a demo</h5>
+          </div>
         </div>
       </div>
-      <div class="home_mslidersection">
-        <div data-delay="4000" data-animation="cross" data-autoplay="1" data-duration="500" data-infinite="1" class="slider-2 w-slider">
-          <div class="w-slider-mask">
-            <div class="home_mslider_slide1 w-slide">
-              <div class="home_mslider_qawrap">
-                <div class="home_mslider_question">Are alarms flooding your system?</div>
-                <div class="home_mslider_answer">Know which one takes priority. In real time.</div>
+      <div class="support_sec2">
+        <div class="support_sec1_contain w-container">
+          <div class="contact_sec2_flexleft w-form">
+            <form id="email-form" name="email-form" data-name="Email Form" class="support_contactform"><input type="text" class="contact_textfield w-input" maxlength="256" name="first-name" data-name="first name" placeholder="* First Name" id="first-name" required="" /><input type="text" class="contact_textfield w-input" maxlength="256" name="last-name" data-name="last name" placeholder="* Last Name" id="last-name" required="" /><input type="email" class="contact_textfield w-input" maxlength="256" name="Work-Email" data-name="Work Email *" placeholder="* Work Email" id="Work-Email" required="" /><input type="tel" class="contact_textfield w-input" maxlength="256" name="phone" data-name="phone" placeholder="* Phone Number" id="phone" required="" /><input type="tel" class="contact_textfield w-input" maxlength="256" name="Organization-Nam" data-name="Organization Nam" placeholder="* Organization Name" id="Organization-Nam" required="" />
+              <div class="text-block-10">* Required</div>
+              <div class="contact_formradiowrap">
+                <div class="contact_formradio_heading">Role</div>
+                <div class="w-radio"><input type="radio" id="Facilities Managament" name="Role" value="Facilities Managament" data-name="Role" class="w-radio-input" /><label for="Facilities Managament" class="w-form-label">Facilities Managament</label></div>
+                <div class="w-radio"><input type="radio" id="Consultant" name="Role" value="Consultant" data-name="Role" class="w-radio-input" /><label for="Consultant" class="w-form-label">Consultant</label></div>
+                <div class="w-radio"><input type="radio" id="Other" name="Role" value="Other" data-name="Role" class="w-radio-input" /><label for="Other" class="w-form-label">Other</label></div>
+                <div class="contact_formradio_heading">Topics of Interest</div>
+                <div class="w-checkbox"><input type="checkbox" id="Automated Tenant Utility Invoicing" name="Automated-Tenant-Utility-Invoicing" data-name="Automated Tenant Utility Invoicing" class="w-checkbox-input" /><label for="Automated Tenant Utility Invoicing" class="w-form-label">Automated Tenant Utility Invoicing</label></div>
+                <div class="w-checkbox"><input type="checkbox" id="Alarm Managament" name="Alarm-Managament" data-name="Alarm Managament" class="w-checkbox-input" /><label for="Alarm Managament" class="w-form-label">Alarm Management</label></div>
+                <div class="w-checkbox"><input type="checkbox" id="Facilities Management" name="Facilities-Management" data-name="Facilities Management" class="w-checkbox-input" /><label for="Facilities Management" class="w-form-label">Facilities Management</label></div>
+                <div class="w-checkbox"><input type="checkbox" id="Asset Management" name="Asset-Management" data-name="Asset Management" class="w-checkbox-input" /><label for="Asset Management" class="w-form-label">Asset Management</label></div>
               </div>
+              <div class="w-checkbox"><input type="checkbox" id="Asset Management" name="Asset-Management" data-name="Asset Management" class="w-checkbox-input" /><label for="Asset Management-2" class="w-form-label">Subscribe to the Virtual Facility Newsletter</label></div><input type="submit" value="Send" data-wait="Please wait..." class="btn_default contactsubmit w-button" /></form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
             </div>
-            <div class="home_mslider_slide2 w-slide">
-              <div class="home_mslider_qawrap">
-                <div class="home_mslider_question">Are you flat charging your tenants for utilities?</div>
-                <div class="home_mslider_answer">Don’t leave money on the table. Recapture the true costs.</div>
-              </div>
-            </div>
-            <div class="home_mslider_slide3 w-slide">
-              <div class="home_mslider_qawrap">
-                <div class="home_mslider_question">Do you have platform fatigue?</div>
-                <div class="home_mslider_answer">Start building your Virtual Facility today.</div>
-              </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
-          <div class="w-slider-arrow-left">
-            <div class="icon w-icon-slider-left"></div>
-          </div>
-          <div class="w-slider-arrow-right">
-            <div class="icon w-icon-slider-right"></div>
-          </div>
-          <div class="slide-nav-2 w-slider-nav w-round"></div>
-        </div>
-      </div>
-      <div class="home_belowherocontain">
-        <div class="home_herosecbottom"><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c702b0b9b54773c4ff81243_home_arrow.svg" alt="" class="image" /></div>
-        <div class="home_belowhero_line2">
-          <div class="home_herobelow_textwrap">
-            <h1 class="whiteoutbg">The Need</h1>
-            <h5>Without a centralized home, facility information is difficult to find and impossible to leverage.</h5>
+          <div class="contact_sec2_flexright">
+            <div class="div-block-49"></div>
+            <div class="div-block-50">
+              <div class="text-block-8">Virtual Facility</div>
+              <div class="text-block-9">39 West 37th Street, 17th Floor<br/>New York, NY 10018</div>
+              <div class="contact_contactinfo_lineheading">Sales/General:</div>
+              <div class="contact_contactinfo_lineinfo">833.VFI.7007 (833.834.7007)</div>
+              <div class="contact_contactinfo_lineheading">Customer Support:</div>
+              <div class="contact_contactinfo_lineinfo">646.876.0155</div>
+            </div>
+            <div class="div-block-51"></div>
           </div>
         </div>
       </div>
+      <footer class="section">
+        <div class="footer_left">
+          <div class="footer_copyright">© 2019 Virtual Facility</div>
+        </div>
+        <div class="footer_right"><a href="/company/about" class="footer_link">About</a><a href="/terms-of-use" class="footer_link">Terms of Use</a><a href="/privacy-policy" class="footer_link">Privacy Policy</a><a href="/contact" class="footer_link nodividerline w--current">Contact Us</a>
+          <div class="footer_phonenumber">833.VFI.7007</div><a href="https://www.linkedin.com/company/virtual-facility-inc" target="_blank" class="footer_socialicon w-inline-block"></a></div>
+      </footer>
     </div>
-    <div class="home_sec1">
-      <div class="home_sec1contain w-container">
-        <div class="home_sec1top"></div>
-        <div class="home_sec1_content">
-          <div class="home_sec1_p1">
-            <div class="home_sec1_head1bg">
-              <h1 class="blue">VIRTUAL FACILITY</h1>
-            </div>
-          </div>
-          <div class="home_sec1_head2">
-            <h5>The only comprehensive, building intelligence system that points you in the right direction in one easy to manage location.</h5>
-          </div>
-          <div class="home_sec1_line1"></div>
-          <div class="home_sec1_line2">
-            <div class="home_sec1_head3bg">
-              <h1 class="blue">THE RESULT</h1>
-            </div>
-          </div>
-          <div class="home_sec1_head3contain">
-            <h5>Get a complete, accurate, up-to-the-minute picture of your entire operation. Know how, when and where to act.</h5>
-          </div>
-          <div class="home_sec1_line3"></div>
-        </div>
-        <div class="home_sec1_bottom"></div>
-      </div>
-    </div>
-    <div class="home_sec2">
-      <div class="home_sec2contain w-container">
-        <div class="home_sec2_line1"></div>
-        <div class="div-block-27">
-          <div class="home_sec2_line2"></div>
-          <div class="home_sec2_copy1wrap">
-            <h3>FIND YOUR PATH<br/></h3>
-            <h1 class="blue">START BUILDING YOUR VIRTUAL FACILITY TODAY</h1>
-          </div>
-          <div class="home_sec2_line3"></div>
-        </div>
-        <div class="home_sec2_line4"></div>
-        <div class="home_sec2_productblockwrapper">
-          <a href="/solutions#invoicing" class="home_productboxcontainer w-inline-block">
-            <div class="home_productbox green">
-              <h4 class="productbox_heading">AUTOMATED TENANT UTILITY INVOICING</h4>
-              <div class="productboxdesc">Recapture your true costs.<br/>Empower your tenants.<br/>Plan for future investments.</div>
-            </div>
-            <div class="home_productboxshadow"></div>
-          </a>
-          <a href="/solutions#alarms" class="home_productboxcontainer w-inline-block">
-            <div class="home_productbox orange">
-              <h4 class="productbox_heading">ALARM MANAGEMENT SYSTEM</h4>
-              <div class="productboxdesc">Prioritize alarms.<br/>Identify the best course of action. Automate responses.</div>
-            </div>
-            <div class="home_productboxshadow"></div>
-          </a>
-          <a href="/solutions#assetManagement" class="home_productboxcontainer w-inline-block">
-            <div class="home_productbox">
-              <h4 class="productbox_heading">ASSET MANAGEMENT</h4>
-              <div class="productboxdesc">Coming Soon<br/><br/>‍</div>
-            </div>
-            <div class="home_productboxshadow"></div>
-          </a>
-        </div>
-        <div class="home_sec2_line5"></div>
-        <div class="home_sec2_ctacontain"><a href="/contact" class="btn_default w-button">Request a Demo</a></div>
-      </div>
-    </div>
-    <div class="home_sec3">
-      <div data-w-id="524443a7-a372-895c-f0ee-1bc884578148" class="home_sec1contain testimonialssection w-container">
-        <div data-w-id="f56c7c98-9973-1c09-fb0b-0013f74fc928" style="opacity:0" class="div-block-8"><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c129c79337af71c766cb867_home_dots4.svg" alt="" class="image-3" /></div>
-        <div data-w-id="0d1e6498-5471-239d-2210-9a0eedf9f79f" style="opacity:0" class="div-block-9">
-          <h4 data-w-id="348267c5-46da-f0a9-ce82-57ecd6bb1158" style="opacity:0;-webkit-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="blue">VIRTUAL FACILITY IS GUARANTEED TO CHANGE THE DIRECTION OF YOUR ENTIRE OPERATION.</h4>
-          <h5 data-w-id="3d80238b-86dc-13d5-a8d7-1874a4d94134" style="opacity:0;-webkit-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)">Listen to what other VFI users say:</h5>
-        </div>
-        <div data-w-id="ecaab7ad-1dd0-09c0-0cd2-fe0a7f64dbb7" style="opacity:0" class="div-block-10"><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c12a02a54b3286d72b72e3f_home_verticalDivider.svg" alt="" /></div>
-        <div class="home_testimonialwrapdiv">
-          <div data-w-id="2bae5aa3-634e-ed4c-d345-3a675a8a49cb" style="opacity:0;-webkit-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="home_testimonial">“Using VFI, we will realize operational savings that are 2 to 10 times the annual contract value of the software.” –Landlord</div><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c12a02a54b3286d72b72e3f_home_verticalDivider.svg" data-w-id="f08e9d58-fdc8-e3cc-89aa-01cd9e53a437" style="opacity:0" alt="" />
-          <div data-w-id="ee8f2506-e8c3-4ccd-3de7-dbfa5be9f456" style="opacity:0;-webkit-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="home_testimonial _2nd">“I’ve recaptured all of my utility costs and then some for my operating staff.”</div><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c12a02a54b3286d72b72e3f_home_verticalDivider.svg" data-w-id="95c1090b-1780-e84d-9cc1-7e558428223a" style="opacity:0" alt="" />
-          <div data-w-id="54734eef-126d-cd66-0dce-6f74c41e1988" style="opacity:0;-webkit-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -30PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="home_testimonial">“VFI gives me the actionable intelligence that has already streamlined my operations and reduced my energy consumption and consultant dependency to say nothing of wasted employee time.”</div>
-        </div>
-      </div>
-    </div>
-    <footer class="section">
-      <div class="footer_left">
-        <div class="footer_copyright">© 2019 Virtual Facility</div>
-      </div>
-      <div class="footer_right"><a href="/company/about" class="footer_link">About</a><a href="/terms-of-use" class="footer_link">Terms of Use</a><a href="/privacy-policy" class="footer_link">Privacy Policy</a><a href="/contact" class="footer_link nodividerline">Contact Us</a>
-        <div class="footer_phonenumber">833.VFI.7007</div><a href="https://www.linkedin.com/company/virtual-facility-inc" target="_blank" class="footer_socialicon w-inline-block"></a></div>
-    </footer>
     <div data-w-id="7838fd11-caf6-1224-118f-bd308241be6c" class="navsticky" data-ix="hidestickynavdefault">
       <div class="nav_container_sticky w-container">
         <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
-          <div class="w-container"><a href="/" class="brand w-nav-brand w--current"><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c113f9827f39a75f3af0807_virtual-facility-logo.svg" width="300" alt=""/></a>
-            <nav role="navigation" class="nav-menu w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">Home</a>
+          <div class="w-container"><a href="/" class="brand w-nav-brand"><img src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/5c113f9827f39a75f3af0807_virtual-facility-logo.svg" width="300" alt=""/></a>
+            <nav role="navigation" class="nav-menu w-nav-menu"><a href="/" class="nav-link w-nav-link">Home</a>
               <div data-hover="1" data-delay="0" class="dropdown w-dropdown">
                 <div class="dropdown-toggle w-hidden-medium w-hidden-small w-hidden-tiny w-dropdown-toggle">
                   <a href="/solutions" class="navbarlinkdropdown w-inline-block">
@@ -419,7 +332,7 @@
                 <nav class="dropdown-list w-dropdown-list"><a href="/company/about" class="navdropdownlink w-dropdown-link">ABOUT</a><a href="/company/team" class="navdropdownlink w-dropdown-link">TEAM</a>
                   <div class="dropdownnav_bottomlin"></div>
                 </nav>
-              </div><a href="/solutions" class="nav-link mobileonly w-nav-link">SOLUTIONS</a><a href="/company/about" class="nav-link mobileonly w-nav-link">About</a><a href="/company/team" class="nav-link mobileonly w-nav-link">Team</a><a href="/contact" class="nav-link w-nav-link">Company</a>
+              </div><a href="/solutions" class="nav-link mobileonly w-nav-link">SOLUTIONS</a><a href="/company/about" class="nav-link mobileonly w-nav-link">About</a><a href="/company/team" class="nav-link mobileonly w-nav-link">Team</a><a href="/contact" class="nav-link w-nav-link w--current">Company</a>
               <div class="nav_demoanimatedbutton w-embed">
                 <!doctype html>
                 <html lang="en">
@@ -530,7 +443,7 @@
                 </body>
                 </html>
               </div><a href="/solutions" class="nav-link requestbutton w-nav-link">Request a Demo</a>
-              <a href="/contact" class="mobilenavdemobutton w-inline-block">
+              <a href="/contact" class="mobilenavdemobutton w-inline-block w--current">
                 <div class="mobilenav_demobtntext">Request A Demo</div>
               </a>
             </nav>
@@ -545,30 +458,16 @@
     <script src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/js/virtual-facility.ed1d17ca9.js" type="text/javascript"></script>
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
-    <!--
-  <script src="//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/jquery.ScrollMagic.min.js"></script>
-
-<script src="//gladio.co/clients/virtualfacility/scroll-home.js"></script>
-<script src="//gladio.co/clients/virtualfacility/scroll-module.js"></script>
-<link href="//gladio.co/clients/virtualfacility/scroll-styles.css" rel="stylesheet" type="text/css"/>
-
--->
-
-
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
        <script>debug = true;</script>
        <script src="sm/ScrollMagic.js"></script>
        <script src="sm/debug.addIndicators.js"></script>
        <script src="sm/jquery.ScrollMagic.js"></script>
 
-
-       <script src="scroll-home.js?<?php echo rand(1000,9999);?>"></script>
+       <script src="scroll-team.js?<?php echo rand(1000,9999);?>"></script>
        <script src="scroll-module.js?<?php echo rand(1000,9999);?>"></script>
-
        <link href="scroll-styles.css?<?php echo rand(1000,9999);?>" rel="stylesheet" type="text/css"/>
+
 
   </body>
 </html>

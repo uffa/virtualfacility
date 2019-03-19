@@ -185,6 +185,7 @@ VF = window.VF || {};
     },
     addlinebox: function(lb,tr) {
       var _this = this;
+      var $targetdiv;
       var num = _this.lineboxes.length+1;
       var startclass  = ".linestart"+num;
       var endclass    = ".lineend"+num;
@@ -192,21 +193,26 @@ VF = window.VF || {};
       if ($(startclass).length == 0 || $(endclass).length == 0) {
         console.log("cannot find ." + startclass + " or ."+ endclass);
       }
-      $(startclass + " > DIV > DIV").each(function() {
-        if ($(this).css("position") == 'static') {
-          $(this).css("position","relative");
-          $(this).css("z-index",100);
-        }
-      });
-      var $targetdiv = $(startclass + " > DIV ");
-      if ($targetdiv.length == 0) {
+
+      $targetdiv = $(startclass + " > DIV:first"); // Use first div unless has class "startdiv" or none available
+      if ($(startclass).hasClass("startdiv") || $targetdiv.length == 0) {
         $targetdiv = $(startclass);
       }
+
       if ($targetdiv.length > 1) {
         console.log("multiple divs found for linebox: " + num);
         console.log($targetdiv);
         $targetdiv = $targetdiv.first();
       }
+
+
+      $targetdiv.find("> DIV").each(function() {
+        if ($(this).css("position") == 'static') {
+          $(this).css("position","relative");
+          $(this).css("z-index",100);
+        }
+      });
+
 
       $div = $targetdiv.prepend("<div id='"+ lineboxname +"' class='linebox'/>").css("position", "relative");
       $linebox = $("#"+lineboxname);
@@ -280,6 +286,9 @@ VF = window.VF || {};
     boxWidth:function() {
       return this.currentLinebox.width()-3;
     },
+    boxLeft:function() {
+      return 4;
+    },
     getPolylineLength: function(polylineElement){
       function dis(p,q){
           return Math.sqrt((p.x-q.x)*(p.x-q.x) + (p.y-q.y)*(p.y-q.y));
@@ -339,6 +348,9 @@ VF = window.VF || {};
     };
     VF.animPage.boxWidth = function() {
         return VF.animModule.boxWidth();
+    };
+    VF.animPage.boxLeft = function() {
+        return VF.animModule.boxLeft();
     };
     VF.animPage.duplines = function() {
        return VF.animModule.duplines();
