@@ -1,3 +1,6 @@
+if(typeof(console) != "object") {var console = {}; console.log = function() {};}
+function getQParams(qp) { try{r=unescape(location.search.match(new RegExp(qp+"=+([^&]*)"))[1]);}catch(e){r='';} return r; }
+
 (function( $ ) {
   var debug = window.debug || getQParams("debug") || false;
   var thisscript  = "scroll-loader";
@@ -9,6 +12,7 @@
 
   var minify      = (scripthost.indexOf("cdn.jsdelivr.net") > - 1 && !debug);
   var suffix      = minify?".min":"";
+  var cachebreak  = debug?"?"+Math.round(Math.random()*10000):"";
 
   var scripts   = [];
   var pagescript = null;
@@ -51,16 +55,17 @@
   if (debug) {
     scripts.push(smhost+"plugins/debug.addIndicators.js");
   }
-  scripts.push(scripthost+"scroll-"+pagescript+suffix+".js");
-  scripts.push(scripthost+"scroll-module"+suffix+".js");
+  scripts.push(scripthost+"scroll-"+pagescript+suffix+".js"+cachebreak);
+  scripts.push(scripthost+"scroll-module"+suffix+".js"+cachebreak);
 
-  var styles = scripthost+"scroll-styles"+suffix+".css";
+  var styles = scripthost+"scroll-styles"+suffix+".css"+cachebreak;
 
   $("<link/>", {
      rel: "stylesheet",
      type: "text/css",
      href: styles
   }).appendTo("head");
+  console.log("styles loaded: " + styles);
 
   var deferred = new $.Deferred(),
       pipe = deferred;
@@ -76,14 +81,3 @@
   deferred.resolve();
 
 })(jQuery);
-
-
-function getQParams( qp ) {
-  try {
-    r=unescape(location.search.match(new RegExp(qp+"=+([^&]*)"))[1]);
-  }
-  catch ( e ) {
-    r='';
-  }
-  return r;
-}

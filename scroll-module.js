@@ -7,15 +7,14 @@ VF = window.VF || {};
     resettimer:null,
     lineboxes:[],
     hookpos: 0.55,
-    addindicators: window.debug || false,
+    isdebug: window.debug || getQParams("debug") || false,
     currentLinebox:null,
 
 
     init: function () {
-
       var _this = this;
-      if (_this.getQParams("debug")) {
-        _this.addindicators = true;
+      if (_this.isdebug) {
+        $("body").addClass("debug");
       }
       _this.presetup();
       setTimeout(function() {
@@ -31,6 +30,7 @@ VF = window.VF || {};
       _this.duplines();
       _this.animatelines();
       _this.animatetext();
+      _this.addactivator();
     },
     presetup: function() {
       var _this = this;
@@ -102,7 +102,45 @@ VF = window.VF || {};
                     .triggerHook(_this.hookpos + triggeroffset[i])
                     .addTo(_this.animcontroller)
                     .setClassToggle(textselector,'displayed');
-        if (_this.addindicators) {
+        if (_this.isdebug) {
+          scene.addIndicators({
+            name: textselector,
+            indent: 0});
+        }
+      });
+
+      },
+    addactivator: function() {
+      var _this = this;
+
+      var textselectors = [];
+      var triggeroffset = [];
+
+      // build animations looking for .scrollin and offset##
+      $(".activate").each(function(i) {
+        var classes = $(this).attr("class").split(/\s+/);
+        var offset = 0;
+        $.each(classes,function() {
+          if (this.indexOf("offset") == 0) {
+            offsetcheck = parseInt(this.replace("offset",""));
+            if (!isNaN(offsetcheck)) {
+              offset = offsetcheck/100;
+            }
+          }
+        });
+        $(this).addClass("activate"+i);
+        textselectors.push(".activate"+i);
+        triggeroffset.push(offset);
+      });
+
+
+      $.each(textselectors,function(i,textselector) {
+        $(textselector).addClass("waiting");
+        var scene = new ScrollMagic.Scene({triggerElement:textselector, duration:0})
+                    .triggerHook(_this.hookpos + triggeroffset[i])
+                    .addTo(_this.animcontroller)
+                    .setClassToggle(textselector,'displayed');
+        if (_this.isdebug) {
           scene.addIndicators({
             name: textselector,
             indent: 0});
@@ -133,7 +171,7 @@ VF = window.VF || {};
                   .addTo(_this.animcontroller)
                   .setClassToggle("#activeline"+snum, 'active')
                   .on("progress", callback);
-          if (_this.addindicators) {
+          if (_this.isdebug) {
             scene.addIndicators({
               name: trigger,
               indent: 0
@@ -237,8 +275,8 @@ VF = window.VF || {};
       var r = "";
       var lastparam = "x";
       $.each(coords, function(i,p) {
-        if (isNaN(p)) {
-          console.log("invalid line coordinates: " + r + "[NaN for " + lastparam + Math.ceil(i/2) + "]");
+        if (isNaN(p) || p == null) {
+          console.log("invalid line coordinates: " + r + "[NaN for " + lastparam + (Math.ceil(i/2) + 1) + "]");
           var lastIndex = r.lastIndexOf(" ");
           r = r.substring(0, lastIndex);
           return false; // exit loop
@@ -254,6 +292,13 @@ VF = window.VF || {};
         }
       });
       return r;
+    },
+    checkSelector:function(selector) {
+      if ($(selector).length != 1) {
+        console.log("invalid selector for: " + selector, " (length: "+$(selector).length+")");
+        return false;
+      }
+      return true;
     },
     heightOf:function(selector) {
       return parseInt($(selector).height())+parseInt($(selector).css("paddingBottom"))+parseInt($(selector).css("paddingTop"));
@@ -275,6 +320,7 @@ VF = window.VF || {};
       return $(selector).offset().top - this.currentLinebox.offset().top + this.heightOf(selector)/2;
     },
     bottomOf:function(selector) {
+      if (!this.checkSelector(selector)) { return 0; }
       return $(selector).offset().top - this.currentLinebox.offset().top + this.heightOf(selector);
     },
     boxCenter:function() {
@@ -298,15 +344,6 @@ VF = window.VF || {};
           len += dis(ps.getItem(i-1),ps.getItem(i));
       }
       return len;
-    },
-    getQParams: function ( qp ) {
-        try {
-          r=unescape(location.search.match(new RegExp(qp+"=+([^&]*)"))[1]);
-        }
-        catch ( e ) {
-          r='';
-        }
-        return r;
     }
   };
 

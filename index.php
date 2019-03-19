@@ -549,6 +549,10 @@
     <script src="scroll-loader.js?<?php echo rand(1000,9999);?>"></script>
 
 <!--
+
+  <script src="//cdn.jsdelivr.net/gh/uffa/virtualfacility/scroll-loader.min.js"></script>
+
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/jquery.ScrollMagic.min.js"></script>
