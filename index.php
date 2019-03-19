@@ -545,19 +545,22 @@
     <script src="https://uploads-ssl.webflow.com/5c0de5e936137dd992dda63a/js/virtual-facility.ed1d17ca9.js" type="text/javascript"></script>
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 
-    <!--
-  <script src="//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
+    <script>debug = true;</script>
+    <script src="scroll-loader.js?<?php echo rand(1000,9999);?>"></script>
+
+<!--
+<script src="//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/jquery.ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.js"></script>
 
-<script src="//gladio.co/clients/virtualfacility/scroll-home.js"></script>
-<script src="//gladio.co/clients/virtualfacility/scroll-module.js"></script>
-<link href="//gladio.co/clients/virtualfacility/scroll-styles.css" rel="stylesheet" type="text/css"/>
-
--->
+<script src="//cdn.jsdelivr.net/gh/uffa/virtualfacility/scroll-home.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/uffa/virtualfacility/scroll-module.min.js"></script>
+<link href="//cdn.jsdelivr.net/gh/uffa/virtualfacility/scroll-styles.min.css" rel="stylesheet" type="text/css"/>
 
 
+
+    <!--
        <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
        <script>debug = true;</script>
        <script src="sm/ScrollMagic.js"></script>
@@ -569,6 +572,8 @@
        <script src="scroll-module.js?<?php echo rand(1000,9999);?>"></script>
 
        <link href="scroll-styles.css?<?php echo rand(1000,9999);?>" rel="stylesheet" type="text/css"/>
+       -->
+
 
   </body>
 </html>
