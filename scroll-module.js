@@ -221,6 +221,12 @@ VF = window.VF || {};
 
       _this.animcontroller.destroy(true);
     },
+    setrelative: function($div) {
+      if ($div.css("position") == 'static') {
+        $div.css("position","relative");
+        $div.css("z-index",100);
+      }
+    },
     addlinebox: function(lb,tr) {
       var _this = this;
       var $targetdiv;
@@ -245,10 +251,11 @@ VF = window.VF || {};
 
 
       $targetdiv.find("> DIV").each(function() {
-        if ($(this).css("position") == 'static') {
-          $(this).css("position","relative");
-          $(this).css("z-index",100);
-        }
+        _this.setrelative($(this));
+      });
+
+      $targetdiv.siblings().each(function() {
+        _this.setrelative($(this));
       });
 
 

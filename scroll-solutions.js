@@ -14,8 +14,8 @@ VF = window.VF || {};
 
 
       $(".solutions_invoicingsection").addClass("linestart2 lineend1");
-      $(".solutions_alarmsection").addClass("linestart3 lineend2");
-      $(".sol_secasset").addClass("linestart4 startdiv lineend3");
+      $(".solutions_alarmsection").addClass("linestart3 lineend2").attr("durationoffset","450");
+      $(".sol_secasset").addClass("linestart4 startdiv lineend3").attr("durationoffset","450");
       $("footer").addClass("lineend4").attr("durationoffset","450");
 
       $(".sol_sec1_productboxes").wrap("<div class='boxwrap'></div>");
@@ -49,7 +49,9 @@ VF = window.VF || {};
       x3 = x4 = _this.rightOf(".sol_secinv_headingwrap");
       y4 = y5 = _this.bottomOf(".sol_secinv_headingwrap");
       x5 = x6 = _this.boxLeft();
-      y6 = _this.boxHeight();
+      y6 = y7 = _this.topOf(".sol_secinv_line2");
+      x7 = x8 = _this.boxCenter();
+      y8 = _this.bottomOf(".sol_secinv_line2");
 
       _this.constructline([x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10]);
       x1=y1=x2=y2=x3=y3=x4=y4=x5=y5=x6=y6=x7=y7=x8=y8=x9=y9=x10=y10=null; // reset vars
