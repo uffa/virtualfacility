@@ -55,7 +55,7 @@ function getQParams(qp) { try{r=unescape(location.search.match(new RegExp(qp+"=+
   if (debug) {
     scripts.push(smhost+"plugins/debug.addIndicators.js");
   }
-  scripts.push(scripthost+"scroll-"+pagescript+suffix+".js"+cachebreak);
+  scripts.push(scripthost+"scroll-page-"+pagescript+suffix+".js"+cachebreak);
   scripts.push(scripthost+"scroll-module"+suffix+".js"+cachebreak);
 
   var styles = scripthost+"scroll-styles"+suffix+".css"+cachebreak;
