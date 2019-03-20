@@ -11,6 +11,18 @@ VF = window.VF || {};
       $(".about_sec2").addClass("linestart2 lineend1").attr("durationoffset","100");
       $("footer").addClass("lineend2").attr("durationoffset","450");
 
+      $(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div").addClass("scrollin");
+      $(".about_sec1_abouthead1").addClass("scrollin");
+      $(".about_sec1_abouttextwrap").addClass("scrollin");
+      $(".about_sec2_copy1wrap h1").addClass("scrollin");
+      $(".about_sec2_copy1wrap h5").addClass("scrollin");
+
+      $(".btn_default").addClass("scrollin offset25");
+      $(".cta_heading").addClass("scrollin offset30");
+
+
+
+
     },
   createlines: function() {
     var _this = this;
@@ -25,7 +37,7 @@ VF = window.VF || {};
       y2 = y3 = _this.bottomOf(".about_sec1_copy1wrap");
       x3 = x4 = _this.boxWidth();
       y4 = y5 = _this.middleOf(".about_sec1_copy2subhead");
-      x5 = x6 = _this.leftOf(".about_sec1_abouthead1");
+      x5 = x6 = _this.leftOf(".about_sec1_abouthead1",-10);
       y6 = y7 = _this.middleOf(".about_sec1_abouthead1");
       x7 = x8 = _this.boxWidth();
       y8 = y9 = _this.bottomOf(".about_sec1_abouttextwrap");

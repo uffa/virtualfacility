@@ -8,6 +8,7 @@ VF = window.VF || {};
     lineboxes:[],
     hookpos: 0.55,
     isdebug: window.debug || getQParams("debug") || false,
+    ispreview: getQParams("preview") || false,
     currentLinebox:null,
 
 
@@ -16,11 +17,34 @@ VF = window.VF || {};
       if (_this.isdebug) {
         $("body").addClass("debug");
       }
+      if (_this.ispreview) {
+        $("body").addClass("preview");
+      }
       _this.presetup();
       setTimeout(function() {
         _this.buildanimation();
         _this.browserevents();
       },10);
+    },
+    getBackground: function($elem) {
+      var _this = this;
+      var color = $elem.css("background-color");
+      if ((color !== 'rgba(0, 0, 0, 0)') && (color !== 'transparent')) {
+          return color;
+      }
+      if ($elem.is("body")) {
+          return false;
+      } else {
+          return _this.getBackground($elem.parent());
+      }
+    },
+    addBackground: function(selector) {
+      var _this = this;
+      if (!this.checkSelector(selector)) { return ""; }
+      var bg = _this.getBackground($(selector));
+      if (bg) {
+        $(selector).css("background-color",bg);
+      }
     },
     buildanimation: function() {
       var _this = this;
@@ -413,6 +437,9 @@ VF = window.VF || {};
     };
     VF.animPage.duplines = function() {
        return VF.animModule.duplines();
+    };
+    VF.animPage.addBackground = function(a) {
+       return VF.animModule.addBackground(a);
     };
   }
 

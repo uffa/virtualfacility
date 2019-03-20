@@ -38,7 +38,7 @@ function getQParams(qp) { try{r=unescape(location.search.match(new RegExp(qp+"=+
       break;
     case "contact":
     case "virtualfacility/contact.php":
-      pagescript = "contact";
+      //pagescript = "contact";
       break;
     default:
       // code block

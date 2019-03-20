@@ -13,12 +13,30 @@ VF = window.VF || {};
 
 
 
-      $(".solutions_invoicingsection").addClass("linestart2 lineend1");
-      $(".solutions_alarmsection").addClass("linestart3 lineend2").attr("durationoffset","450");
+      $(".solutions_invoicingsection").addClass("linestart2 lineend1").attr("durationoffset","450");
+      $(".solutions_alarmsection").addClass("linestart3 lineend2").attr("durationoffset","550");
       $(".sol_secasset").addClass("linestart4 startdiv lineend3").attr("durationoffset","450");
       $("footer").addClass("lineend4").attr("durationoffset","450");
 
       $(".sol_sec1_productboxes").wrap("<div class='boxwrap'></div>");
+
+
+      $(".sol_sec1_productboxes").addClass("scrollin offset0");
+
+      $(".sol_secinv_headingwrap h1").addClass("scrollin offset20");
+      $(".sol_secinv_headingwrap h5").addClass("scrollin offset20");
+
+      $(".sol_secinv_ul1 li").addClass("scrollin offset20");
+
+      $(".btn_default").addClass("scrollin offset20");
+      $(".solutions_ctah").addClass("scrollin offset20");
+
+
+      _this.addBackground(".sol_secinv_heading");
+      _this.addBackground(".sol_secalarm_heading1");
+      _this.addBackground(".sol_secalarm_subhead");
+
+
 
     },
   createlines: function() {
@@ -77,6 +95,7 @@ VF = window.VF || {};
       x2 = x3 = _this.leftOf(".sol_secasset_heading");
       y3 = y4 = _this.bottomOf(".sol_secasset_ulwrap");
       x4 = x5 = _this.boxCenter();
+      y5 = _this.bottomOf(".sol_secasset_line3");
 
 
 

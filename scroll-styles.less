@@ -1,3 +1,5 @@
+footer { padding-bottom: 150px !important;  }
+
 .boxwrap    { background: #FFF;   }
 .line       { position: absolute; top:0px; left:0px;}
 .linebox    { position: absolute; }
@@ -9,8 +11,14 @@
   .backline polyline   { stroke:#d1d3d4; z-index: 9;}
 }
 
-body.debug {
+body.debug:not(.preview)  {
   .backline polyline   { stroke:#ff0000 !important; }
+}
+
+.preview {
+  .linestart1, .linestart2, .linestart3, .linestart4 {
+    & div  { border:none; }
+  }
 }
 
 
@@ -32,22 +40,22 @@ body.debug {
 }
 .appear.waiting:not(.displayed) {
   opacity: 0;
-  top:20px;
+//  top:20px;
   &.blue, &.whiteoutbg {
-    opacity: 1;
-    top:0px;
-    color:#d1d3d4;
-    transform: scale(1.0);
+    //opacity: 1;
+    //top:0px;
+    //color:#d1d3d4;
+    //transform: scale(1.0);
   }
   //transform: scale(1.15);
   .btn_default {
-    border-color: #f15a29;
-    background: #f15a29;
+    //border-color: #f15a29;
+    //background: #f15a29;
    // transform: scale(1.4);
   }
 }
 .appear.displayed {
-  top:0px;
+  //top:0px;
 }
 
 .team_headshotborder  {
