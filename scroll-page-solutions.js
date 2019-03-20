@@ -8,11 +8,6 @@ VF = window.VF || {};
 
       $(".solutions_sec1").addClass("linestart1 startdiv");
       $(".sol_sec1_line2").addClass("linetrigger1");
-
-
-
-
-
       $(".solutions_invoicingsection").addClass("linestart2 lineend1").attr("durationoffset","450");
       $(".solutions_alarmsection").addClass("linestart3 lineend2").attr("durationoffset","550");
       $(".sol_secasset").addClass("linestart4 startdiv lineend3").attr("durationoffset","450");
@@ -20,34 +15,22 @@ VF = window.VF || {};
 
       $(".sol_sec1_productboxes").wrap("<div class='boxwrap'></div>");
 
-
-      $(".sol_sec1_productboxes").addClass("scrollin offset0");
-
-      $(".sol_secinv_headingwrap h1").addClass("scrollin offset20");
-      $(".sol_secinv_headingwrap h5").addClass("scrollin offset20");
-
-      $(".sol_secinv_ul1 li").addClass("scrollin offset20");
-
-      $(".btn_default").addClass("scrollin offset20");
-      $(".solutions_ctah").addClass("scrollin offset20");
-
-
-      $(".sol_secalarm_heading1").addClass("scrollin offset20");
-      $(".sol_secalarm_subhead").addClass("scrollin offset20");
-      $(".sol_secalarm_ulwrap li").addClass("scrollin offset20");
-
-
-      $(".sol_secasset_heading").addClass("scrollin offset20");
-      $(".sol_secasset_subhead").addClass("scrollin offset20");
-      $(".sol_secasset_ulwrap div, .sol_secasset_ulwrap li").addClass("scrollin offset20");
-
-
+      _this.scrollin(".sol_sec1_productboxes",0);
+      _this.scrollin(".sol_secinv_headingwrap h1");
+      _this.scrollin(".sol_secinv_headingwrap h5");
+      _this.scrollin(".sol_secinv_ul1 li");
+      _this.scrollin(".btn_default");
+      _this.scrollin(".solutions_ctah");
+      _this.scrollin(".sol_secalarm_heading1");
+      _this.scrollin(".sol_secalarm_subhead");
+      _this.scrollin(".sol_secalarm_ulwrap li");
+      _this.scrollin(".sol_secasset_heading");
+      _this.scrollin(".sol_secasset_subhead");
+      _this.scrollin(".sol_secasset_ulwrap div, .sol_secasset_ulwrap li");
 
       _this.addBackgroundWrap(".sol_secinv_heading");
       _this.addBackgroundWrap(".sol_secalarm_heading1,.sol_secalarm_subhead");
       _this.addBackgroundWrap(".sol_secasset_heading,.sol_secasset_subhead");
-
-
 
     },
   createlines: function() {

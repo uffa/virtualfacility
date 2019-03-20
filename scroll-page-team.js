@@ -10,11 +10,7 @@ VF = window.VF || {};
       $(".team_sec1_line2").addClass("linetrigger1");
       $(".team_teamcontainer").addClass("lineend1");
 
-
-      //$(".about_sec2").addClass("linestart2 lineend1").attr("durationoffset","100");
-      //$("footer").addClass("lineend2").attr("durationoffset","450");
-
-      $(".team_teamitem").addClass("scrollin offset10");
+      _this.scrollin(".team_teamitem",10);
       //$(".team_headshotborder").addClass("activate");
 
     },

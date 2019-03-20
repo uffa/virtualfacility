@@ -8,27 +8,20 @@ VF = window.VF || {};
 
       $(".about_sec1").addClass("linestart1");
       $(".about_sec1_copy2wrap").addClass("linetrigger1");
-      $(".about_sec2").addClass("linestart2 lineend1").attr("durationoffset","100");
+      $(".about_sec2").addClass("linestart2 lineend1").attr("durationoffset","400");
       $("footer").addClass("lineend2").attr("durationoffset","450");
 
-      $(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div").addClass("scrollin offset10");
-      $(".about_sec1_abouthead1").addClass("scrollin");
-      $(".about_sec1_abouthead2").addClass("scrollin");
-      $(".about_sec1_abouthead3").addClass("scrollin");
-      $(".about_sec1_aboutul li").addClass("scrollin");
-
-
-    //  $(".about_sec1_abouttextwrap").addClass("scrollin");
-      $(".about_sec2_copy1wrap h1").addClass("scrollin");
-      $(".about_sec2_copy1wrap h5").addClass("scrollin");
-
-      $(".btn_default").addClass("scrollin offset25");
-      $(".cta_heading").addClass("scrollin offset30");
-
-
+      _this.scrollin(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div",10);
+      _this.scrollin(".about_sec1_abouthead1");
+      _this.scrollin(".about_sec1_abouthead2");
+      _this.scrollin(".about_sec1_abouthead3");
+      _this.scrollin(".about_sec1_aboutul li");
+      _this.scrollin(".about_sec2_copy1wrap h1");
+      _this.scrollin(".about_sec2_copy1wrap h5");
+      _this.scrollin(".btn_default",25);
+      _this.scrollin(".cta_heading",30);
 
       _this.addBackgroundWrap(".about_sec1_abouthead1");
-
 
     },
   createlines: function() {

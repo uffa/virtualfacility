@@ -4,28 +4,21 @@ VF = window.VF || {};
   VF.animPage = {
     presetup: function() {
       var _this = this;
-      // REPLACE WITH HTML ATTRIBUTES AND CLASSES
 
       $(".home_belowherocontain").addClass("linestart1");
       $(".home_sec1").addClass("linestart2 lineend1");
       $(".home_sec2").addClass("linestart3 lineend2");
       $("footer").addClass("lineend3").attr("durationoffset","400").attr("endoffset","150");
 
-      if ($(".scrollin").length == 0) {
-        $(".home_herobelow_textwrap h1").addClass("scrollin");
-        $(".home_herobelow_textwrap h5").addClass("scrollin");
-
-        $(".home_sec1_head1bg h1").addClass("scrollin");
-        $(".home_sec1_head2 h5").addClass("scrollin");
-
-        $(".home_sec1_head3bg h1").addClass("scrollin offset15");
-        $(".home_sec1_head3contain h5").addClass("scrollin");
-
-        $(".home_sec2_copy1wrap").addClass("scrollin offset0");
-
-        $(".home_sec2_productblockwrapper").addClass("scrollin offset10");
-        $(".home_sec2_ctacontain").addClass("scrollin offset30");
-      }
+      _this.scrollin(".home_herobelow_textwrap h1");
+      _this.scrollin(".home_herobelow_textwrap h5");
+      _this.scrollin(".home_sec1_head1bg h1");
+      _this.scrollin(".home_sec1_head2 h5");
+      _this.scrollin(".home_sec1_head3bg h1",15);
+      _this.scrollin(".home_sec1_head3contain h5");
+      _this.scrollin(".home_sec2_copy1wrap",0);
+      _this.scrollin(".home_sec2_productblockwrapper",10);
+      _this.scrollin(".home_sec2_ctacontain",30);
 
       $(".home_sec2_productblockwrapper").wrap("<div class='boxwrap'></div>");
 

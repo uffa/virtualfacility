@@ -103,7 +103,18 @@ VF = window.VF || {};
           $clone.attr("id","activeline"+index);
       });
     },
+    scrollin: function(selector,offset) {
+      var _this = this;
+      $(selector).each(function() {
+        if (!$(this).hasClass("scrollin")) {
+          $(this).addClass("scrollin");
+          if (offset && !isNaN(offset)) {
+            $(this).addClass("offset"+offset);
+          }
+        }
 
+      });
+    },
     animatetext: function() {
       var _this = this;
 
@@ -287,7 +298,7 @@ VF = window.VF || {};
       });
 
       $targetdiv.siblings().each(function() {
-        _this.setrelative($(this));
+      //  _this.setrelative($(this));
       });
 
 
@@ -361,8 +372,8 @@ VF = window.VF || {};
       var val = this.boxCenter() + this.widthOf(selector)/2;
       if (adjustment && !isNaN(adjustment)) {
         val = val + adjustment;
-        if (val > this.boxWidth()) {
-          return this.boxWidth();
+        if (val >= this.boxWidth() - 10) {
+          return this.boxWidth() - 10;
         }
       }
       return val;
@@ -455,6 +466,9 @@ VF = window.VF || {};
     };
     VF.animPage.addBackgroundWrap = function(a) {
        return VF.animModule.addBackgroundWrap(a);
+    };
+    VF.animPage.scrollin = function(a,b) {
+       return VF.animModule.scrollin(a,b);
     };
   }
 
