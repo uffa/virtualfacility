@@ -13,7 +13,12 @@ VF = window.VF || {};
 
       $(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div").addClass("scrollin");
       $(".about_sec1_abouthead1").addClass("scrollin");
-      $(".about_sec1_abouttextwrap").addClass("scrollin");
+      $(".about_sec1_abouthead2").addClass("scrollin");
+      $(".about_sec1_abouthead3").addClass("scrollin");
+      $(".about_sec1_aboutul li").addClass("scrollin");
+
+
+    //  $(".about_sec1_abouttextwrap").addClass("scrollin");
       $(".about_sec2_copy1wrap h1").addClass("scrollin");
       $(".about_sec2_copy1wrap h5").addClass("scrollin");
 
@@ -21,6 +26,8 @@ VF = window.VF || {};
       $(".cta_heading").addClass("scrollin offset30");
 
 
+
+      _this.addBackgroundWrap(".about_sec1_abouthead1");
 
 
     },
@@ -38,7 +45,7 @@ VF = window.VF || {};
       x3 = x4 = _this.boxWidth();
       y4 = y5 = _this.middleOf(".about_sec1_copy2subhead");
       x5 = x6 = _this.leftOf(".about_sec1_abouthead1",-10);
-      y6 = y7 = _this.middleOf(".about_sec1_abouthead1");
+      y6 = y7 = _this.middleOf(".about_sec1_abouthead1",5);
       x7 = x8 = _this.boxWidth();
       y8 = y9 = _this.bottomOf(".about_sec1_abouttextwrap");
       x9 = x10 = 4;

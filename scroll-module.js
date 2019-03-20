@@ -113,13 +113,12 @@ VF = window.VF || {};
       // build animations looking for .scrollin and offset##
       $(".scrollin").each(function(i) {
         var classes = $(this).attr("class").split(/\s+/);
-        var offset = 0;
+        var offset = .20;  // DEFAULT OFFSET FOR TEXT IS .2
         $.each(classes,function() {
           if (this.indexOf("offset") == 0) {
             offsetcheck = parseInt(this.replace("offset",""));
             if (!isNaN(offsetcheck)) {
               offset = offsetcheck/100;
-
             }
           }
         });
@@ -348,7 +347,7 @@ VF = window.VF || {};
     },
     leftOf:function(selector,adjustment) {
       if (!this.checkSelector(selector)) { return 0; }
-      val = $(selector).offset().left - this.currentLinebox.offset().left;
+      var val = $(selector).offset().left - this.currentLinebox.offset().left;
       if (adjustment && !isNaN(adjustment)) {
         val = val + adjustment;
         if (val < this.boxLeft()) {
@@ -359,7 +358,7 @@ VF = window.VF || {};
     },
     rightOf:function(selector,adjustment) {
       if (!this.checkSelector(selector)) { return 0; }
-      val = this.boxCenter() + this.widthOf(selector)/2;
+      var val = this.boxCenter() + this.widthOf(selector)/2;
       if (adjustment && !isNaN(adjustment)) {
         val = val + adjustment;
         if (val > this.boxWidth()) {
@@ -371,8 +370,12 @@ VF = window.VF || {};
     topOf:function(selector) {
       return $(selector).offset().top - this.currentLinebox.offset().top;
     },
-    middleOf:function(selector) {
-      return $(selector).offset().top - this.currentLinebox.offset().top + this.heightOf(selector)/2;
+    middleOf:function(selector,adjustment) {
+      var val = $(selector).offset().top - this.currentLinebox.offset().top + this.heightOf(selector)/2;
+      if (adjustment && !isNaN(adjustment)) {
+        val = val + adjustment;
+      }
+      return val;
     },
     bottomOf:function(selector) {
       if (!this.checkSelector(selector)) { return 0; }
@@ -420,8 +423,8 @@ VF = window.VF || {};
     VF.animPage.topOf = function(a) {
         return VF.animModule.topOf(a);
     };
-    VF.animPage.middleOf = function(a) {
-        return VF.animModule.middleOf(a);
+    VF.animPage.middleOf = function(a,b) {
+        return VF.animModule.middleOf(a,b);
     };
     VF.animPage.bottomOf = function(a) {
         return VF.animModule.bottomOf(a);

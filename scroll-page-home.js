@@ -12,14 +12,14 @@ VF = window.VF || {};
       $("footer").addClass("lineend3").attr("durationoffset","400").attr("endoffset","150");
 
       if ($(".scrollin").length == 0) {
-        $(".home_herobelow_textwrap h1").addClass("scrollin offset20");
-        $(".home_herobelow_textwrap h5").addClass("scrollin offset20");
+        $(".home_herobelow_textwrap h1").addClass("scrollin");
+        $(".home_herobelow_textwrap h5").addClass("scrollin");
 
-        $(".home_sec1_head1bg h1").addClass("scrollin offset20");
-        $(".home_sec1_head2 h5").addClass("scrollin offset20");
+        $(".home_sec1_head1bg h1").addClass("scrollin");
+        $(".home_sec1_head2 h5").addClass("scrollin");
 
         $(".home_sec1_head3bg h1").addClass("scrollin offset15");
-        $(".home_sec1_head3contain h5").addClass("scrollin offset0");
+        $(".home_sec1_head3contain h5").addClass("scrollin");
 
         $(".home_sec2_copy1wrap").addClass("scrollin offset0");
 
