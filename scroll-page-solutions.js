@@ -32,9 +32,20 @@ VF = window.VF || {};
       $(".solutions_ctah").addClass("scrollin offset20");
 
 
-      _this.addBackground(".sol_secinv_heading");
-      _this.addBackground(".sol_secalarm_heading1");
-      _this.addBackground(".sol_secalarm_subhead");
+      $(".sol_secalarm_heading1").addClass("scrollin offset20");
+      $(".sol_secalarm_subhead").addClass("scrollin offset20");
+      $(".sol_secalarm_ulwrap li").addClass("scrollin offset20");
+
+
+      $(".sol_secasset_heading").addClass("scrollin offset20");
+      $(".sol_secasset_subhead").addClass("scrollin offset20");
+      $(".sol_secasset_ulwrap div, .sol_secasset_ulwrap li").addClass("scrollin offset20");
+
+
+
+      _this.addBackgroundWrap(".sol_secinv_heading");
+      _this.addBackgroundWrap(".sol_secalarm_heading1,.sol_secalarm_subhead");
+      _this.addBackgroundWrap(".sol_secasset_heading,.sol_secasset_subhead");
 
 
 
@@ -77,7 +88,7 @@ VF = window.VF || {};
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
       x1 = _this.boxLeft();
-      x2 = x3 = _this.leftOf(".sol_secalarm_heading1");
+      x2 = x3 = _this.leftOf(".sol_secalarm_heading1",5);
       y1 = y2 =  _this.middleOf(".sol_secalarm_heading1");
       y3 = y4 = _this.topOf(".sol_secalarm_ulwrap");
       x4 = x5 = _this.rightOf(".sol_secalarm_ulwrap ul");
@@ -92,7 +103,7 @@ VF = window.VF || {};
       $lb = _this.addlinebox();
       x1 = _this.boxWidth();
       y1 = y2 = _this.middleOf(".sol_secasset_heading");
-      x2 = x3 = _this.leftOf(".sol_secasset_heading");
+      x2 = x3 = _this.leftOf(".sol_secasset_heading",5);
       y3 = y4 = _this.bottomOf(".sol_secasset_ulwrap");
       x4 = x5 = _this.boxCenter();
       y5 = _this.bottomOf(".sol_secasset_line3");

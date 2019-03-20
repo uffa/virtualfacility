@@ -46,6 +46,15 @@ VF = window.VF || {};
         $(selector).css("background-color",bg);
       }
     },
+    addBackgroundWrap: function(selector) {
+      var _this = this;
+      $wrap = $(selector).wrapAll("<div class='itemwrap'></div>");
+      $wrap = $(selector).parent(".itemwrap");
+      var bg = _this.getBackground($wrap);
+      if (bg) {
+        $wrap.css("background-color",bg);
+      }
+    },
     buildanimation: function() {
       var _this = this;
       _this.animcontroller = new ScrollMagic.Controller({loglevel: 0});
@@ -440,6 +449,9 @@ VF = window.VF || {};
     };
     VF.animPage.addBackground = function(a) {
        return VF.animModule.addBackground(a);
+    };
+    VF.animPage.addBackgroundWrap = function(a) {
+       return VF.animModule.addBackgroundWrap(a);
     };
   }
 
