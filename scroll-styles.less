@@ -35,9 +35,14 @@ body.debug:not(.preview)  {
 .appear {
   &, .btn_default {
     position: relative;
-    transition: all 0.5s ease-out;
+    transition: all 0.3s ease-out;
   }
 }
+
+.scrollin:not(.appear) {
+   opacity: 0;
+}
+
 .appear.waiting:not(.displayed) {
   opacity: 0;
 //  top:20px;

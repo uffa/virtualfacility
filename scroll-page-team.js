@@ -14,7 +14,8 @@ VF = window.VF || {};
       //$(".about_sec2").addClass("linestart2 lineend1").attr("durationoffset","100");
       //$("footer").addClass("lineend2").attr("durationoffset","450");
 
-      $(".team_headshotborder").addClass("activate");
+      $(".team_teamitem").addClass("scrollin offset10");
+      //$(".team_headshotborder").addClass("activate");
 
     },
   createlines: function() {

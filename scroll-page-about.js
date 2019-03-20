@@ -11,7 +11,7 @@ VF = window.VF || {};
       $(".about_sec2").addClass("linestart2 lineend1").attr("durationoffset","100");
       $("footer").addClass("lineend2").attr("durationoffset","450");
 
-      $(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div").addClass("scrollin");
+      $(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div").addClass("scrollin offset10");
       $(".about_sec1_abouthead1").addClass("scrollin");
       $(".about_sec1_abouthead2").addClass("scrollin");
       $(".about_sec1_abouthead3").addClass("scrollin");
