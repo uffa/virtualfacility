@@ -1,3 +1,6 @@
+if(typeof(console) != "object") {var console = {}; console.log = function() {};}
+function getQParams(qp) { try{r=unescape(location.search.match(new RegExp(qp+"=+([^&]*)"))[1]);}catch(e){r='';} return r; }
+
 VF = window.VF || {};
 
 (function( $ ) {

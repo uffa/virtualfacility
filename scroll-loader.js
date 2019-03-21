@@ -50,9 +50,9 @@ var pagescript = null;
     return;
   }
 
-  scripts.push(svghost+"svg.min.js");
+/*  scripts.push(svghost+"svg.min.js");
   scripts.push(smhost+"ScrollMagic.min.js");
-  scripts.push(smhost+"plugins/jquery.ScrollMagic.min.js");
+  scripts.push(smhost+"plugins/jquery.ScrollMagic.min.js");*/
   if (debug) {
     scripts.push(smhost+"plugins/debug.addIndicators.js");
   }
