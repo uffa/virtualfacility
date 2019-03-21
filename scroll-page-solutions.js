@@ -1,5 +1,7 @@
 VF = window.VF || {};
 
+pagescript = "solutions";
+
 (function( $ ) {
   VF.animPage = {
     presetup: function() {
