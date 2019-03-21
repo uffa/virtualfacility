@@ -14,6 +14,7 @@ var pagescript = null;
 
   var minify      = (scripthost.indexOf("cdn.jsdelivr.net") > - 1 && !debug);
   var suffix      = minify?".min":"";
+  //var cachebreak  = debug?"?"+Math.round(Math.random()*10000):"";
   var cachebreak  = debug?"?"+Math.round(Math.random()*10000):"";
 
   var scripts   = [];
