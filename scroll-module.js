@@ -20,6 +20,9 @@ VF = window.VF || {};
       if (_this.ispreview) {
         $("body").addClass("preview");
       }
+      if (pagescript) {
+        $("body").addClass(pagescript);
+      }
       _this.presetup();
       setTimeout(function() {
         _this.buildanimation();

@@ -1,6 +1,8 @@
 if(typeof(console) != "object") {var console = {}; console.log = function() {};}
 function getQParams(qp) { try{r=unescape(location.search.match(new RegExp(qp+"=+([^&]*)"))[1]);}catch(e){r='';} return r; }
 
+var pagescript = null;
+
 (function( $ ) {
   var debug = window.debug || getQParams("debug") || false;
   var thisscript  = "scroll-loader";
@@ -15,7 +17,6 @@ function getQParams(qp) { try{r=unescape(location.search.match(new RegExp(qp+"=+
   var cachebreak  = debug?"?"+Math.round(Math.random()*10000):"";
 
   var scripts   = [];
-  var pagescript = null;
 
   var currentpath = $.trim(window.location.pathname.replace(/^\/|\/$/g, ''));
 
