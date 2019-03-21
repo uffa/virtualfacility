@@ -13,8 +13,8 @@ var pagescript = null;
   var scripthost  = scriptsrc.split(thisscript)[0];
 
   var minify      = (scripthost.indexOf("cdn.jsdelivr.net") > - 1 && !debug);
+  minify      = false; // Don't use minify
   var suffix      = minify?".min":"";
-  //var cachebreak  = debug?"?"+Math.round(Math.random()*10000):"";
   var cachebreak  = debug?"?"+Math.round(Math.random()*10000):"";
 
   var scripts   = [];
