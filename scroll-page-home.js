@@ -32,7 +32,7 @@ pagescript = "home";
 
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
-      x1 = x2 = _this.boxWidth();
+      x1 = x2 = _this.boxWidth()-2;
       y1 = 85; // below image
       y2 = y3 = _this.middleOf(".home_belowhero_line2 h1");
       x3 = x4 = _this.boxLeft();
@@ -79,7 +79,7 @@ pagescript = "home";
       $("#linebox1").css("left",adj);
 
       $arrowimg = $("#linebox1").siblings("img");
-      $arrowimg.css("left",$("#linebox1").width() - $arrowimg.width()/2 +4);
+      $arrowimg.css("left",$("#linebox1").width() - $arrowimg.width()/2 +2);
 
     },
 

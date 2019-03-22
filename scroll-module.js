@@ -13,7 +13,7 @@ VF = window.VF || {};
     isdebug: window.debug || getQParams("debug") || false,
     ispreview: getQParams("preview") || false,
     currentLinebox:null,
-
+    firstload:true,
 
     init: function () {
       console.log("scroll-module.js init");
@@ -84,6 +84,9 @@ VF = window.VF || {};
       var draw = SVG($lb.attr("id")).size("100%","100%");
       var polyline = draw.polyline(construct).fill('none');
       $(polyline.node).parent().addClass("line vline backline");
+      if (_this.firstload) {
+        $(polyline.node).parent().fadeOut(0).fadeIn(300);
+      }
     },
     createlines: function() {
       var _this = this;
@@ -250,6 +253,7 @@ VF = window.VF || {};
     },
     resetanimation: function() {
       var _this = this;
+      _this.firstload = false;
       clearTimeout(_this.resettimer);
       _this.resettimer = setTimeout(function() {
         _this.resetanimationnow();
