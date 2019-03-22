@@ -32,6 +32,10 @@ VF = window.VF || {};
         _this.buildanimation();
         _this.browserevents();
       },10);
+
+      $(".loadin").each(function() {
+        $(this).addClass("reveal");
+      })
     },
     getBackground: function($elem) {
       var _this = this;
