@@ -13,7 +13,7 @@ pagescript = "about";
       $(".about_sec2").addClass("linestart2 lineend1").attr("durationoffset","400");
       $("footer").addClass("lineend2").attr("durationoffset","450");
 
-      _this.scrollin(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div",10);
+/*      _this.scrollin(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div",10);
       _this.scrollin(".about_sec1_abouthead1");
       _this.scrollin(".about_sec1_abouthead2");
       _this.scrollin(".about_sec1_abouthead3");
@@ -21,7 +21,7 @@ pagescript = "about";
       _this.scrollin(".about_sec2_copy1wrap h1");
       _this.scrollin(".about_sec2_copy1wrap h5");
       _this.scrollin(".btn_default",25);
-      _this.scrollin(".cta_heading",30);
+      _this.scrollin(".cta_heading",30);*/
 
       _this.addBackgroundWrap(".about_sec1_abouthead1");
 

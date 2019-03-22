@@ -17,7 +17,7 @@ pagescript = "solutions";
 
       $(".sol_sec1_productboxes").wrap("<div class='boxwrap'></div>");
 
-      _this.scrollin(".sol_sec1_productboxes",0);
+/*      _this.scrollin(".sol_sec1_productboxes",0);
       _this.scrollin(".sol_secinv_headingwrap h1");
       _this.scrollin(".sol_secinv_headingwrap h5");
       _this.scrollin(".sol_secinv_ul1 li");
@@ -28,7 +28,7 @@ pagescript = "solutions";
       _this.scrollin(".sol_secalarm_ulwrap li");
       _this.scrollin(".sol_secasset_heading");
       _this.scrollin(".sol_secasset_subhead");
-      _this.scrollin(".sol_secasset_ulwrap div, .sol_secasset_ulwrap li");
+      _this.scrollin(".sol_secasset_ulwrap div, .sol_secasset_ulwrap li");*/
 
       _this.addBackgroundWrap(".sol_secinv_heading");
       _this.addBackgroundWrap(".sol_secalarm_heading1,.sol_secalarm_subhead");

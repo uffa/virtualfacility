@@ -4,6 +4,7 @@ function getQParams(qp) { try{r=unescape(location.search.match(new RegExp(qp+"=+
 var pagescript = null;
 
 (function( $ ) {
+  console.log("scroll-loader.js init");
   var debug = window.debug || getQParams("debug") || false;
   var thisscript  = "scroll-loader";
   var svghost     = "//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/";
@@ -60,14 +61,14 @@ var pagescript = null;
   scripts.push(scripthost+"scroll-page-"+pagescript+suffix+".js"+cachebreak);
   scripts.push(scripthost+"scroll-module"+suffix+".js"+cachebreak);
 
-  var styles = scripthost+"scroll-styles"+suffix+".css"+cachebreak;
+/*  var styles = scripthost+"scroll-styles"+suffix+".css"+cachebreak;
 
   $("<link/>", {
      rel: "stylesheet",
      type: "text/css",
      href: styles
   }).appendTo("head");
-  console.log("styles loaded: " + styles);
+  console.log("styles loaded: " + styles);*/
 
   var deferred = new $.Deferred(),
       pipe = deferred;

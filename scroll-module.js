@@ -16,6 +16,7 @@ VF = window.VF || {};
 
 
     init: function () {
+      console.log("scroll-module.js init");
       var _this = this;
       if (_this.isdebug) {
         $("body").addClass("debug");

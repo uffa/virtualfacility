@@ -12,7 +12,7 @@ pagescript = "team";
       $(".team_sec1_line2").addClass("linetrigger1");
       $(".team_teamcontainer").addClass("lineend1");
 
-      _this.scrollin(".team_teamitem",10);
+    /*  _this.scrollin(".team_teamitem",10);*/
       //$(".team_headshotborder").addClass("activate");
 
     },
