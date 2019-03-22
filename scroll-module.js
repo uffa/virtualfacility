@@ -14,7 +14,19 @@ VF = window.VF || {};
     ispreview: getQParams("preview") || false,
     currentLinebox:null,
     firstload:true,
-
+    preinit: function () {
+      var _this = this;
+      if (_this.isdebug) {
+        var scriptsrc = "//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.js";
+        $.getScript(scriptsrc, function() {
+          console.log('script loaded:  '+ scriptsrc);
+          _this.init();
+        });
+      }
+      else {
+        _this.init();
+      }
+    },
     init: function () {
       console.log("scroll-module.js init");
       var _this = this;
@@ -35,7 +47,7 @@ VF = window.VF || {};
 
       $(".loadin").each(function() {
         $(this).addClass("reveal");
-      })
+      });
     },
     getBackground: function($elem) {
       var _this = this;
@@ -488,5 +500,5 @@ VF = window.VF || {};
   }
 
 
-  VF.animModule.init();
+  VF.animModule.preinit();
 })(jQuery);
