@@ -127,6 +127,7 @@ VF = window.VF || {};
           $clone.css("stroke-dasharray", linelength);
           $clone.css("stroke-dashoffset", linelength);
           $clone.attr("id","activeline"+index);
+          $clone.css("opacity",1);
       });
     },
     scrollin: function(selector,offset) {
@@ -358,6 +359,7 @@ VF = window.VF || {};
           r = r.substring(0, lastIndex);
           return false; // exit loop
         }
+        p = Math.ceil(p); // ensure whole numbers
         r += p;
         if (i%2 == 1) {
           lastparam = "x";
@@ -405,8 +407,13 @@ VF = window.VF || {};
       }
       return val;
     },
-    topOf:function(selector) {
-      return $(selector).offset().top - this.currentLinebox.offset().top;
+    topOf:function(selector,adjustment) {
+      if (!this.checkSelector(selector)) { return 0; }
+      var val = $(selector).offset().top - this.currentLinebox.offset().top;
+      if (adjustment && !isNaN(adjustment)) {
+        val = val + adjustment;
+      }
+      return val;
     },
     middleOf:function(selector,adjustment) {
       var val = $(selector).offset().top - this.currentLinebox.offset().top + this.heightOf(selector)/2;
@@ -458,8 +465,8 @@ VF = window.VF || {};
     VF.animPage.rightOf = function(a,b) {
         return VF.animModule.rightOf(a,b);
     };
-    VF.animPage.topOf = function(a) {
-        return VF.animModule.topOf(a);
+    VF.animPage.topOf = function(a,b) {
+        return VF.animModule.topOf(a,b);
     };
     VF.animPage.middleOf = function(a,b) {
         return VF.animModule.middleOf(a,b);

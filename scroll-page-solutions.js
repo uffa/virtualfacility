@@ -12,7 +12,7 @@ pagescript = "solutions";
       $(".sol_sec1_line2").addClass("linetrigger1");
       $(".solutions_invoicingsection").addClass("linestart2 lineend1").attr("durationoffset","450");
       $(".solutions_alarmsection").addClass("linestart3 lineend2").attr("durationoffset","550");
-      $(".sol_secasset").addClass("linestart4 startdiv lineend3").attr("durationoffset","450");
+      $(".sol_secasset").addClass("linestart4 startdiv lineend3").attr("durationoffset","550");
       $("footer").addClass("lineend4").attr("durationoffset","450");
 
       $(".sol_sec1_productboxes").wrap("<div class='boxwrap'></div>");
@@ -87,7 +87,7 @@ pagescript = "solutions";
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
       x1 = _this.boxWidth();
-      y1 = y2 = _this.middleOf(".sol_secasset_heading");
+      y1 = y2 = _this.topOf(".sol_secasset_heading",15);
       x2 = x3 = _this.leftOf(".sol_secasset_heading",5);
       y3 = y4 = _this.bottomOf(".sol_secasset_ulwrap");
       x4 = x5 = _this.boxCenter();

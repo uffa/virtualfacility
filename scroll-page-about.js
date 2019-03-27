@@ -39,7 +39,7 @@ pagescript = "about";
       y2 = y3 = _this.bottomOf(".about_sec1_copy1wrap");
       x3 = x4 = _this.boxWidth();
       y4 = y5 = _this.middleOf(".about_sec1_copy2subhead");
-      x5 = x6 = _this.leftOf(".about_sec1_abouthead1",-10);
+      x5 = x6 = 4; //_this.leftOf(".about_sec1_abouthead1",-10);
       y6 = y7 = _this.middleOf(".about_sec1_abouthead1",5);
       x7 = x8 = _this.boxWidth();
       y8 = y9 = _this.bottomOf(".about_sec1_abouttextwrap");
