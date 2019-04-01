@@ -24,7 +24,8 @@
 <script src="//SCRIPTLOCATION/scroll-module.js"></script>
  ```
 
-### CLASSES TO CREATE TEXT ANIMATIONS
+### CSS CLASSES TO CREATE TEXT ANIMATIONS
+Adding the CSS classes to text elements will allow the code to generate custom animations 
 
 **.loadin** will cause element to fade in on load
 
