@@ -27,7 +27,11 @@
 ### CLASSES TO CREATE TEXT ANIMATIONS
 
 **.loadin** will cause element to fade in on load
+
 **.scrollin** will cause element to fade in when scrolled to
-**.offset20** used with 'scrollin' class to adjust the timing in which the element fades in. The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. 
+
+**.offset20** used with 'scrollin' class to adjust the timing in which the element fades in. 
+
+The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. 
   
   
