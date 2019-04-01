@@ -12,7 +12,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
  ```
 
-### 3 FILES TO INCLUDE IN BODY / AFTER JQUERY INCLUDE :: 
+### 3 FILES TO INCLUDE IN BODY / AFTER JQUERY INCLUDE :
  ```
 <!--1 JQUERY PLUGIN FOR SCROLL MAGIC, ALLOWS JQUERY SELECTORS -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/jquery.ScrollMagic.min.js"></script>
@@ -23,3 +23,11 @@
 <!--3 REUSABLE FRAMEWORK FOR GENERATING LINES AND ANIMATIONS -->
 <script src="//SCRIPTLOCATION/scroll-module.js"></script>
  ```
+
+### CLASSES TO CREATE TEXT ANIMATIONS
+
+**.loadin** will cause element to fade in on load
+**.scrollin** will cause element to fade in when scrolled to
+**.offset20** used with 'scrollin' class to adjust the timing in which the element fades in. The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. 
+  
+  
