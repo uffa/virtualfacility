@@ -262,8 +262,10 @@ VF = window.VF || {};
             trigger = ".triggerstart1";
             duration = $("#linebox1").height() + $("#linebox1").offset().top - _this.$triggerStart.offset().top;
 
-            if ((_this.$triggerStart.offset().top + duration) > $("#linebox2").offset().top ) {
-              duration = duration - ((_this.$triggerStart.offset().top + duration) - $("#linebox2").offset().top);
+            if ($("#linebox2").length == 1) {
+              if ((_this.$triggerStart.offset().top + duration) > $("#linebox2").offset().top ) {
+                duration = duration - ((_this.$triggerStart.offset().top + duration) - $("#linebox2").offset().top);
+              }
             }
           }
           var scene = new ScrollMagic.Scene({triggerElement: trigger, duration: duration})
