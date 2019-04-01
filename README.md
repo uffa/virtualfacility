@@ -25,14 +25,14 @@
  ```
 
 ### CSS CLASSES TO CREATE TEXT ANIMATIONS
-Adding the CSS classes to text elements will allow the code to generate custom animations 
+*Adding the CSS classes to text elements will allow the code to generate custom animations*
 
-**.loadin** will cause element to fade in on load
+**.loadin** : will cause element to fade in on load
 
-**.scrollin** will cause element to fade in when scrolled to
+**.scrollin** : will cause element to fade in when scrolled to
 
-**.offset15** used with 'scrollin' class to adjust the timing in which the element fades in. 
+**.offset15** : used with 'scrollin' class to adjust the timing in which the element fades in.
 
-The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. Setting to "offset15" is redundant, since that is the default setting. 
+*The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. Setting to "offset15" is redundant, since that is the default setting.*
   
   
