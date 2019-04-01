@@ -438,6 +438,23 @@ VF = window.VF || {};
     boxLeft:function() {
       return 4;
     },
+    logoStart:function() {
+      if ($("body").width() < 1000) {
+        pad = 14;
+      }
+      else {
+        pad = 69;
+      }
+      logopos = $(".brand img").offset().left;
+      lbpos = this.currentLinebox.offset().left;
+
+      linestart = logopos - lbpos + pad;
+
+      if (linestart < 4) {
+        linestart = 4;
+      }
+      return linestart;
+    },
     getPolylineLength: function(polylineElement){
       function dis(p,q){
           return Math.sqrt((p.x-q.x)*(p.x-q.x) + (p.y-q.y)*(p.y-q.y));
@@ -491,6 +508,9 @@ VF = window.VF || {};
     };
     VF.animPage.boxLeft = function() {
         return VF.animModule.boxLeft();
+    };
+    VF.animPage.logoStart = function() {
+        return VF.animModule.logoStart();
     };
     VF.animPage.duplines = function() {
        return VF.animModule.duplines();

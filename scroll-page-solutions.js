@@ -43,7 +43,7 @@ pagescript = "solutions";
 
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
-      x1 = x2 = _this.leftOf(".sol_sec1_heading1flexwrap_right",-60); //_this.boxLeft();
+      x1 = x2 = _this.logoStart(); //_this.leftOf(".sol_sec1_heading1flexwrap_right",-60); //_this.boxLeft();
       y1 = 0;
       y2 = y3 = _this.middleOf(".sol_sec1_h1wrap");
       x3 = x4 = _this.rightOf(".sol_sec1_line1",40); //_this.boxWidth(); //_this.rightOf(".sol_sec1_line1");

@@ -34,7 +34,7 @@ pagescript = "about";
 
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
-      x1 = x2 = 4;
+      x1 = x2 = _this.logoStart(); //4;
       y1 = 0;
       y2 = y3 = _this.bottomOf(".about_sec1_copy1wrap");
       x3 = x4 = _this.boxWidth();

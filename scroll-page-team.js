@@ -24,7 +24,7 @@ pagescript = "team";
 
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
-      x1 = x2 = 4;
+      x1 = x2 = _this.logoStart(); //4;
       y1 = 0;
       y2 = y3 = _this.middleOf(".team_sec1_line1innertext-copy h1 ");
       x3 = x4 = _this.boxWidth();
