@@ -30,8 +30,8 @@
 
 **.scrollin** will cause element to fade in when scrolled to
 
-**.offset20** used with 'scrollin' class to adjust the timing in which the element fades in. 
+**.offset15** used with 'scrollin' class to adjust the timing in which the element fades in. 
 
-The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. 
+The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. Setting to "offset15" is redundant, since that is the default setting. 
   
   
