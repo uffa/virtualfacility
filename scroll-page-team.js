@@ -6,14 +6,12 @@ pagescript = "team";
   VF.animPage = {
     presetup: function() {
       var _this = this;
-      VF.animModule.hookpos = 0.46;
+      VF.animModule.scrollActiveOnInit = true;
 
       $(".team_sec1").addClass("linestart1");
       $(".team_sec1_line2").addClass("linetrigger1");
       $(".team_teamcontainer").addClass("lineend1");
 
-    /*  _this.scrollin(".team_teamitem",10);*/
-      //$(".team_headshotborder").addClass("activate");
 
     },
   createlines: function() {
