@@ -35,7 +35,7 @@
 
 *The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. Setting to "offset15" is redundant, since that is the default setting.*
 
-## JSDElIVER
+## JSDELIVER
 ### GLOBAL HEAD
  ```javascript
 <link href="//cdn.jsdelivr.net/gh/uffa/virtualfacility@1.0/scroll-styles.min.css" rel="stylesheet" type="text/css"/> 
