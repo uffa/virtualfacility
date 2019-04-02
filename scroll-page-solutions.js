@@ -6,7 +6,7 @@ pagescript = "solutions";
   VF.animPage = {
     presetup: function() {
       var _this = this;
-      VF.animModule.hookpos = 0.46;
+      VF.animModule.scrollActiveOnInit = true;
 
       $(".solutions_sec1").addClass("linestart1 startdiv");
       $(".sol_sec1_line2").addClass("linetrigger1");
@@ -17,22 +17,10 @@ pagescript = "solutions";
 
       $(".sol_sec1_productboxes").wrap("<div class='boxwrap'></div>");
 
-/*      _this.scrollin(".sol_sec1_productboxes",0);
-      _this.scrollin(".sol_secinv_headingwrap h1");
-      _this.scrollin(".sol_secinv_headingwrap h5");
-      _this.scrollin(".sol_secinv_ul1 li");
-      _this.scrollin(".btn_default");
-      _this.scrollin(".solutions_ctah");
-      _this.scrollin(".sol_secalarm_heading1");
-      _this.scrollin(".sol_secalarm_subhead");
-      _this.scrollin(".sol_secalarm_ulwrap li");
-      _this.scrollin(".sol_secasset_heading");
-      _this.scrollin(".sol_secasset_subhead");
-      _this.scrollin(".sol_secasset_ulwrap div, .sol_secasset_ulwrap li");*/
-
       _this.addBackgroundWrap(".sol_secinv_heading");
       _this.addBackgroundWrap(".sol_secalarm_heading1,.sol_secalarm_subhead");
       _this.addBackgroundWrap(".sol_secasset_heading,.sol_secasset_subhead");
+
 
     },
   createlines: function() {
@@ -43,7 +31,7 @@ pagescript = "solutions";
 
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
-      x1 = x2 = _this.leftOf(".sol_sec1_heading1flexwrap_right",-60); //_this.boxLeft();
+      x1 = x2 = _this.logoStart(); //_this.leftOf(".sol_sec1_heading1flexwrap_right",-60); //_this.boxLeft();
       y1 = 0;
       y2 = y3 = _this.middleOf(".sol_sec1_h1wrap");
       x3 = x4 = _this.rightOf(".sol_sec1_line1",40); //_this.boxWidth(); //_this.rightOf(".sol_sec1_line1");

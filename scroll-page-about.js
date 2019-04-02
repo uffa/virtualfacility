@@ -6,22 +6,12 @@ pagescript = "about";
   VF.animPage = {
     presetup: function() {
       var _this = this;
-      VF.animModule.hookpos = 0.46;
+      VF.animModule.scrollActiveOnInit = true;
 
       $(".about_sec1").addClass("linestart1");
       $(".about_sec1_copy2wrap").addClass("linetrigger1");
       $(".about_sec2").addClass("linestart2 lineend1").attr("durationoffset","400");
       $("footer").addClass("lineend2").attr("durationoffset","450");
-
-/*      _this.scrollin(".about_sec1_copy2wrap > p,.about_sec1_copy2wrap > div",10);
-      _this.scrollin(".about_sec1_abouthead1");
-      _this.scrollin(".about_sec1_abouthead2");
-      _this.scrollin(".about_sec1_abouthead3");
-      _this.scrollin(".about_sec1_aboutul li");
-      _this.scrollin(".about_sec2_copy1wrap h1");
-      _this.scrollin(".about_sec2_copy1wrap h5");
-      _this.scrollin(".btn_default",25);
-      _this.scrollin(".cta_heading",30);*/
 
       _this.addBackgroundWrap(".about_sec1_abouthead1");
 
@@ -34,7 +24,7 @@ pagescript = "about";
 
       ////////////////////////////////////////////////
       $lb = _this.addlinebox();
-      x1 = x2 = 4;
+      x1 = x2 = _this.logoStart(); //4;
       y1 = 0;
       y2 = y3 = _this.bottomOf(".about_sec1_copy1wrap");
       x3 = x4 = _this.boxWidth();

@@ -6,6 +6,8 @@ VF = window.VF || {};
 (function( $ ) {
   VF.animModule = {
 
+    scrollActiveOnInit:false,
+    $triggerStart:null,
     animcontroller:null,
     resettimer:null,
     lineboxes:[],
@@ -21,6 +23,9 @@ VF = window.VF || {};
         $.getScript(scriptsrc, function() {
           console.log('script loaded:  '+ scriptsrc);
           _this.init();
+        });
+        $("nav a").each(function() {
+          $(this).attr("href",$(this).attr("href")+"?debug=1");
         });
       }
       else {
@@ -78,9 +83,25 @@ VF = window.VF || {};
         $wrap.css("background-color",bg);
       }
     },
+    addScrollStarter: function() {
+      var _this = this;
+      if (!_this.scrollActiveOnInit) {
+        return;
+      }
+      // for use on pages where scroll is already activated on initial load
+      $("body").prepend("<div class='triggerstart1'></div>");
+      _this.$triggerStart = $(".triggerstart1");
+      _this.$triggerStart.css("position","absolute");
+      _this.$triggerStart.css("top",_this.hookpos * 100 + "%");
+      if (_this.isdebug) {
+        _this.$triggerStart.css("border-top","1px solid #ff0000");
+        _this.$triggerStart.css("width","90%");
+      }
+    },
     buildanimation: function() {
       var _this = this;
       _this.animcontroller = new ScrollMagic.Controller({loglevel: 0});
+      _this.addScrollStarter();
       _this.createlines();
       _this.adjustlines();
       _this.duplines();
@@ -151,7 +172,7 @@ VF = window.VF || {};
       // build animations looking for .scrollin and offset##
       $(".scrollin").each(function(i) {
         var classes = $(this).attr("class").split(/\s+/);
-        var offset = .20;  // DEFAULT OFFSET FOR TEXT IS .2
+        var offset = .15;  // DEFAULT OFFSET FOR TEXT IS .2 // CHANGED TO .15
         $.each(classes,function() {
           if (this.indexOf("offset") == 0) {
             offsetcheck = parseInt(this.replace("offset",""));
@@ -236,6 +257,17 @@ VF = window.VF || {};
           if (!isNaN(durationoffset)) {
             duration = duration - durationoffset;
           }
+          // override for page that starts above scoll position
+          if (trigger == ".linetrigger1" && _this.$triggerStart) {
+            trigger = ".triggerstart1";
+            duration = $("#linebox1").height() + $("#linebox1").offset().top - _this.$triggerStart.offset().top;
+
+            if ($("#linebox2").length == 1) {
+              if ((_this.$triggerStart.offset().top + duration) > $("#linebox2").offset().top ) {
+                duration = duration - ((_this.$triggerStart.offset().top + duration) - $("#linebox2").offset().top);
+              }
+            }
+          }
           var scene = new ScrollMagic.Scene({triggerElement: trigger, duration: duration})
                   .triggerHook(_this.hookpos)
                   .addTo(_this.animcontroller)
@@ -252,7 +284,6 @@ VF = window.VF || {};
 
 
         function callback(e) {
-         // console.log(e);
           var perc = Math.floor(e.progress * 100);
           var $aline = $(".line.active");
           var linelength = parseInt($aline.css("stroke-dasharray"), 10);
@@ -291,6 +322,12 @@ VF = window.VF || {};
       $(".appear").removeClass("waiting displayed appear");
 
       _this.animcontroller.destroy(true);
+
+      if (_this.$triggerStart) {
+        _this.$triggerStart.remove();
+        _this.$triggerStart = null;
+      }
+
     },
     setrelative: function($div) {
       if ($div.css("position") == 'static') {
@@ -438,6 +475,23 @@ VF = window.VF || {};
     boxLeft:function() {
       return 4;
     },
+    logoStart:function() {
+      if ($("body").width() < 1000) {
+        pad = 14;
+      }
+      else {
+        pad = 69;
+      }
+      logopos = $(".brand img").offset().left;
+      lbpos = this.currentLinebox.offset().left;
+
+      linestart = logopos - lbpos + pad;
+
+      if (linestart < 4) {
+        linestart = 4;
+      }
+      return linestart;
+    },
     getPolylineLength: function(polylineElement){
       function dis(p,q){
           return Math.sqrt((p.x-q.x)*(p.x-q.x) + (p.y-q.y)*(p.y-q.y));
@@ -492,6 +546,9 @@ VF = window.VF || {};
     VF.animPage.boxLeft = function() {
         return VF.animModule.boxLeft();
     };
+    VF.animPage.logoStart = function() {
+        return VF.animModule.logoStart();
+    };
     VF.animPage.duplines = function() {
        return VF.animModule.duplines();
     };
@@ -504,6 +561,10 @@ VF = window.VF || {};
     VF.animPage.scrollin = function(a,b) {
        return VF.animModule.scrollin(a,b);
     };
+    VF.animPage.addScrollStarter = function() {
+        return VF.animModule.addScrollStarter();
+    };
+
   }
 
 
