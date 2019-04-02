@@ -75,5 +75,9 @@ pagescript = "home";
 
   };
 
+  if (typeof(VF.animModule) == "object") {
+    VF.animModule.preinit();
+  }
+
 })(jQuery);
 

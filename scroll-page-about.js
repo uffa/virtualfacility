@@ -52,5 +52,9 @@ pagescript = "about";
 
   };
 
+  if (typeof(VF.animModule) == "object") {
+    VF.animModule.preinit();
+  }
+
 })(jQuery);
 

@@ -14,10 +14,18 @@ VF = window.VF || {};
     hookpos: 0.55,
     isdebug: window.debug || getQParams("debug") || false,
     ispreview: getQParams("preview") || false,
+    isloading: false,
     currentLinebox:null,
     firstload:true,
     preinit: function () {
       var _this = this;
+
+      if (_this.isloading) {
+        console.log("already loading");
+        return;
+      }
+      _this.isloading = true;
+      _this.addFunctions();
       if (_this.isdebug) {
         var scriptsrc = "//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.js";
         $.getScript(scriptsrc, function() {
@@ -501,72 +509,78 @@ VF = window.VF || {};
           len += dis(ps.getItem(i-1),ps.getItem(i));
       }
       return len;
-    }
+    },
+    addFunctions: function() {
+
+      // ADD FUNCTIONS TO PAGE
+      if (VF.animPage) {
+
+        VF.animPage.addlinebox = function() {
+            return VF.animModule.addlinebox();
+        };
+        VF.animPage.constructline = function(a) {
+            return VF.animModule.constructline(a);
+        };
+        VF.animPage.leftOf = function(a,b) {
+            return VF.animModule.leftOf(a,b);
+        };
+        VF.animPage.rightOf = function(a,b) {
+            return VF.animModule.rightOf(a,b);
+        };
+        VF.animPage.topOf = function(a,b) {
+            return VF.animModule.topOf(a,b);
+        };
+        VF.animPage.middleOf = function(a,b) {
+            return VF.animModule.middleOf(a,b);
+        };
+        VF.animPage.bottomOf = function(a) {
+            return VF.animModule.bottomOf(a);
+        };
+        VF.animPage.heightOf = function(a) {
+            return VF.animModule.heightOf(a);
+        };
+        VF.animPage.widthOf = function(a) {
+            return VF.animModule.widthOf(a);
+        };
+        VF.animPage.boxHeight = function() {
+            return VF.animModule.boxHeight();
+        };
+        VF.animPage.boxCenter = function() {
+            return VF.animModule.boxCenter();
+        };
+        VF.animPage.boxWidth = function() {
+            return VF.animModule.boxWidth();
+        };
+        VF.animPage.boxLeft = function() {
+            return VF.animModule.boxLeft();
+        };
+        VF.animPage.logoStart = function() {
+            return VF.animModule.logoStart();
+        };
+        VF.animPage.duplines = function() {
+           return VF.animModule.duplines();
+        };
+        VF.animPage.addBackground = function(a) {
+           return VF.animModule.addBackground(a);
+        };
+        VF.animPage.addBackgroundWrap = function(a) {
+           return VF.animModule.addBackgroundWrap(a);
+        };
+        VF.animPage.scrollin = function(a,b) {
+           return VF.animModule.scrollin(a,b);
+        };
+        VF.animPage.addScrollStarter = function() {
+            return VF.animModule.addScrollStarter();
+        };
+     }
+
+   }
+
   };
 
-  // ADD FUNCTIONS TO PAGE
-  if (VF.animPage) {
-
-    VF.animPage.addlinebox = function() {
-        return VF.animModule.addlinebox();
-    };
-    VF.animPage.constructline = function(a) {
-        return VF.animModule.constructline(a);
-    };
-    VF.animPage.leftOf = function(a,b) {
-        return VF.animModule.leftOf(a,b);
-    };
-    VF.animPage.rightOf = function(a,b) {
-        return VF.animModule.rightOf(a,b);
-    };
-    VF.animPage.topOf = function(a,b) {
-        return VF.animModule.topOf(a,b);
-    };
-    VF.animPage.middleOf = function(a,b) {
-        return VF.animModule.middleOf(a,b);
-    };
-    VF.animPage.bottomOf = function(a) {
-        return VF.animModule.bottomOf(a);
-    };
-    VF.animPage.heightOf = function(a) {
-        return VF.animModule.heightOf(a);
-    };
-    VF.animPage.widthOf = function(a) {
-        return VF.animModule.widthOf(a);
-    };
-    VF.animPage.boxHeight = function() {
-        return VF.animModule.boxHeight();
-    };
-    VF.animPage.boxCenter = function() {
-        return VF.animModule.boxCenter();
-    };
-    VF.animPage.boxWidth = function() {
-        return VF.animModule.boxWidth();
-    };
-    VF.animPage.boxLeft = function() {
-        return VF.animModule.boxLeft();
-    };
-    VF.animPage.logoStart = function() {
-        return VF.animModule.logoStart();
-    };
-    VF.animPage.duplines = function() {
-       return VF.animModule.duplines();
-    };
-    VF.animPage.addBackground = function(a) {
-       return VF.animModule.addBackground(a);
-    };
-    VF.animPage.addBackgroundWrap = function(a) {
-       return VF.animModule.addBackgroundWrap(a);
-    };
-    VF.animPage.scrollin = function(a,b) {
-       return VF.animModule.scrollin(a,b);
-    };
-    VF.animPage.addScrollStarter = function() {
-        return VF.animModule.addScrollStarter();
-    };
-
+  // allow loading in either order
+  if (typeof(VF.animPage) == "object") {
+    VF.animModule.preinit();
   }
 
-
-  VF.animModule.preinit();
 })(jQuery);
