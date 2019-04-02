@@ -1,5 +1,3 @@
-/* footer { padding-bottom: 150px !important;  } */
-
 .itemwrap { display: inline-block; }
 .boxwrap    { background: #FFF;   }
 .line       { position: absolute; top:0px; left:0px;}
@@ -28,66 +26,66 @@ body.colorize:not(.preview)  {
 }
 
 
-.home_herosecbottom {
- // border:none;
-}
-
 .linestart1, .linestart2, .linestart3, .linestart4 {
-  //& div  { border:none; }
   overflow: hidden;
   margin-top: 0px;
 }
 
-.appear {
-  &, .btn_default {
-    position: relative;
-    transition: all 0.3s ease-out;
-  }
-}
 
-.scrollin:not(.appear) {
+body:not(.w-editor):not(.w-editor-body) {
+
+  .appear {
+    &, .btn_default {
+      position: relative;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+
+  .scrollin:not(.appear) {
    opacity: 0;
-}
+  }
 
-.appear.waiting:not(.displayed) {
-  opacity: 0;
-//  top:20px;
-  &.blue, &.whiteoutbg {
-    //opacity: 1;
+  .appear.waiting:not(.displayed) {
+    opacity: 0;
+  //  top:20px;
+    &.blue, &.whiteoutbg {
+      //opacity: 1;
+      //top:0px;
+      //color:#d1d3d4;
+      //transform: scale(1.0);
+    }
+    //transform: scale(1.15);
+    .btn_default {
+      //border-color: #f15a29;
+      //background: #f15a29;
+     // transform: scale(1.4);
+    }
+  }
+  .appear.displayed {
     //top:0px;
-    //color:#d1d3d4;
-    //transform: scale(1.0);
   }
-  //transform: scale(1.15);
-  .btn_default {
-    //border-color: #f15a29;
-    //background: #f15a29;
-   // transform: scale(1.4);
-  }
-}
-.appear.displayed {
-  //top:0px;
-}
 
-.team_headshotborder  {
-  &.waiting {
-    border-color: #f1f1f2;
+  .team_headshotborder  {
+    &.waiting {
+      border-color: #f1f1f2;
+      transition: all 0.5s ease-out;
+    }
+    &.displayed {
+      border-color: #0061af;
+    }
+  }
+
+  .loadin {
+    opacity: 0;
+  }
+
+  .loadin.reveal {
+    opacity: 1;
     transition: all 0.5s ease-out;
   }
-  &.displayed {
-    border-color: #0061af;
-  }
-}
 
-.loadin {
-  opacity: 0;
 }
-
-.loadin.reveal {
-  opacity: 1;
-  transition: all 0.5s ease-out;
-}
-
 
 /*.div-block-28 {
   width: 100%;
