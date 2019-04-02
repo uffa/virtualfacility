@@ -34,5 +34,22 @@
 **.offset15** : used with 'scrollin' class to adjust the timing in which the element fades in.
 
 *The default offset is "offset15", setting to "offset10" will cause the element to fade in sooner, "offset30" will cause the element to fade in later. Setting to "offset15" is redundant, since that is the default setting.*
-  
+
+### JSDElIVER
+## GLOBAL HEAD
+ ```javascript
+<link href="//cdn.jsdelivr.net/gh/uffa/virtualfacility@1.0/scroll-styles.min.css" rel="stylesheet" type="text/css"/> 
+<script src="//cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.0/svg.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+```
+## PAGE /BODY
+```javascript
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/jquery.ScrollMagic.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/uffa/virtualfacility@1.0/scroll-page-solutions.min.js"></script>
+ ```
+ 
+ ## GLOBAL /BODY
+ ```javascript
+<script src="//cdn.jsdelivr.net/gh/uffa/virtualfacility@1.0/scroll-module.min.js"></script>
+ ```
   
